@@ -1,0 +1,10 @@
+<svg id="Facebook_Messenger_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52.941" height="53.347" viewBox="0 0 52.941 53.347">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.068" x2="0.5" y2="0.956" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00c6ff"/>
+      <stop offset="1" stop-color="#0068ff"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_1031" data-name="Path 1031" d="M9.75,43.846v9.5L18.634,48.3a28.274,28.274,0,0,0,7.836,1.1c14.62,0,26.47-11.059,26.47-24.7S41.091,0,26.47,0,0,11.058,0,24.7A24.059,24.059,0,0,0,9.75,43.846Z" transform="translate(0)" fill="url(#linear-gradient)"/>
+  <path id="Path_1032" data-name="Path 1032" d="M53.914,75.878,39.639,90.993l12.992-7.128,6.788,7.128L73.614,75.878l-12.848,7-6.852-7Z" transform="translate(-30.271 -57.945)" fill="#fff"/>
+</svg>

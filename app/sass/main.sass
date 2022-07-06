@@ -1,0 +1,5638 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #ACB5C2
+	transition: $time
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $font
+	overflow-x: hidden
+	color: $text
+
+b, strong
+	font-weight: bold
+
+input, textarea
+	outline: none
+	appearance: none
+	border-radius: 0
+	box-shadow: none
+	transition: $time
+	&:focus::placeholder
+		opacity: 0
+		transform: translateY(-5px)
+
+h1, h2, h3
+	font-weight: bold
+	line-height: 1.4
+
+h1
+	font-weight: normal
+	font-size: 62px
+	line-height: 1.1
+
+h2
+	font-size: 40px
+	font-weight: normal
+
+h3
+	font-weight: normal
+	font-size: 23px
+
+h4
+	font-weight: normal
+	font-size: 15px
+
+h5
+	font-size: 15px
+	font-weight: normal
+
+section
+	position: relative
+	padding: 45px 0
+
+.container
+	padding: 0 20px
+
+.header
+	padding-top: 21px
+	position: relative
+	z-index: 10
+	background-color: #fff
+
+.topline-row
+	display: flex
+	align-items: center
+
+.header-mob-menu
+	margin-right: 17px
+	display: none
+	align-items: center
+	.menu-burger
+		width: 26px
+		height: 14px
+		span:after
+			top: 6px
+.header-logo
+	margin-right: 42px
+
+.logo
+	display: inline-block
+	img
+		width: 200px
+
+.header-location
+	display: flex
+	align-items: center
+	margin-right: 122px
+
+.location-icon
+	margin-right: 9px
+	img
+		width: 9px
+
+.location-link
+	font-size: 14px
+	a
+		color: #000
+		text-decoration: underline
+		position: relative
+		padding-right: 14px
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			margin-top: -1px
+			right: 0
+			width: 6px
+			height: 6px
+			border: 3px solid transparent
+			border-top-color: #000
+
+.phone
+	font-size: 17px
+	font-weight: 500
+	color: #000
+	text-decoration: none
+	transition: $time
+	margin-right: 35px
+	&:hover
+		color: #000
+		text-decoration: none
+		opacity: .7
+
+.header-right
+	display: flex
+	align-items: center
+	flex: 1
+
+.search-form-wrapper
+	flex: 1
+	margin-right: 36px
+	height: 40px
+
+.search-form
+	position: relative
+	width: 100%
+	right: 0
+	left: 0
+	&.autocomplete
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		padding: 21px 20px
+		background-color: #fff
+		z-index: 50
+		display: flex
+		flex-direction: column
+		align-items: center
+		.search-product-input
+			box-shadow: 0px 0px 7px 0px rgba(4,84,197,0.07)
+		.search-group
+			max-width: 1780px
+			width: 100%
+		.search-btn
+			margin-right: -40px
+			right: 100%
+		.search-input
+			padding-left: 40px
+			padding-right: 18px
+		.close-search-autocomplete
+			display: flex
+
+.search-results-dropdown
+	padding-bottom: 29px
+	position: absolute
+	top: 82px
+	left: 0
+	right: 0
+	background-color: #fff
+	visibility: hidden
+	z-index: -10
+	opacity: 0
+	transform: translateY(-20px)
+	transition: $time
+	&.fade
+		visibility: visible
+		z-index: 10
+		opacity: 1
+		transform: translateY(0)
+
+.search-group
+	position: relative
+
+.search-input
+	width: 100%
+	border: 1px solid #D8DBE1
+	height: 40px
+	font-size: 12px
+	padding-left: 18px
+	padding-right: 40px
+	transition: $time
+
+.search-btn,
+.close-search-autocomplete
+	position: absolute
+	top: 0
+	right: 0
+	height: 40px
+	width: 40px
+	display: flex
+	align-items: center
+	justify-content: center
+	border: none
+	background-color: transparent
+	outline: none !important
+	cursor: pointer
+	transition: opacity .3s ease
+	&:hover
+		opacity: .7
+
+.search-btn
+	img
+		width: 16px
+
+.close-search-autocomplete
+	display: none
+	img
+		width: 10px
+
+.account-link-item
+	margin-right: 37px
+	position: relative
+	&:last-child
+		margin-right: 0
+
+.account-compare
+	margin-right: 45px
+
+.account-link
+	transition: $time
+	display: inline-block
+	position: relative
+	&:hover
+		opacity: .7
+
+.account-link-qnt
+	position: absolute
+	right: -12px
+	top: -6px
+	width: 18px
+	height: 18px
+	border: 2px solid #fff
+	border-radius: 50%
+	background-color: $green
+	font-size: 8px
+	line-height: 16px
+	text-align: center
+
+.account-liked
+	margin-right: 26px
+
+.order-status
+	margin-right: 22px
+	position: relative
+	.account-dropdown
+		right: 16px
+
+.order-status-link
+	font-size: 12px
+	text-decoration: underline
+	color: #000!important
+	transition: $time
+	white-space: nowrap
+	&:hover
+		opacity: .7
+
+.header-basket
+	position: relative
+	.account-dropdown
+		right: -21px
+
+.basket-link
+	display: inline-flex
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	align-items: center
+	justify-content: center
+	background-color: #000
+	position: relative
+	transition: $time
+	&:hover
+		background-color: $green
+	&.added
+		&:after
+			content: ''
+			position: absolute
+			background-color: $green
+			width: 11px
+			height: 11px
+			border-radius: 50%
+			top: 0
+			right: 0
+			border: 2px solid #fff
+	img
+		width: 18px
+
+.popup-wrapper
+	position: fixed
+	z-index: 100
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: none
+	&.opened
+		.popup-block
+			opacity: 1
+			transform: translateY(0)
+		.popup-bg
+			opacity: .45
+
+.popup-container
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+
+.popup-block
+	position: relative
+	z-index: 1
+	background-color: #fff
+	max-width: 723px
+	max-height: 100vh
+	overflow-y: auto
+	overflow-x: hidden
+	transition: all .4s ease
+	opacity: 0
+	transform: translateY(-20px)
+	width: 100%
+
+.popup-block,
+.location-list-col
+	&::-webkit-scrollbar
+		width: 3px
+	&::-webkit-scrollbar-track
+		background-color: transparent
+	&::-webkit-scrollbar-thumb
+		background-color: #000
+	
+.popup-bg
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 0
+	background-color: #483D3D
+	opacity: 0
+	transition: all .4s ease
+
+.popup-close
+	border: none
+	padding: 0
+	width: 20px
+	height: 20px
+	outline: none !important
+	background-color: transparent
+	padding: 0
+	margin: 0
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	right: 18px
+	top: 22px
+	cursor: pointer
+	transition: $time
+	z-index: 2
+	&:hover
+		opacity: .7
+	img
+		width: 9px
+
+.popup-block-location
+	max-width: 895px
+	overflow: hidden
+	height: 593px
+
+.location-list-row
+	display: flex
+	max-height: 100%
+
+.location-list-col-wrapper
+	display: flex
+	flex: 0 0 58%
+
+.location-list-col
+	padding: 33px 0 10px 52px
+	max-height: 100%
+	overflow-y: auto
+	border-right: 1px solid #D8DBE1
+	flex: 0 0 50%
+	width: 100%
+
+.location-region
+	background-color: #F5F5F5
+
+.location-list
+	padding: 0
+	margin: 0
+	padding-bottom: 36px
+	list-style-type: none
+	font-size: 14px
+	&:last-child
+		margin-bottom: 0
+	li
+		position: relative
+		margin-bottom: 18px
+		&:last-child
+			margin-bottom: 0
+		a
+			color: #000
+			text-decoration: none!important
+			transition: $time
+			&:hover
+				color: #B8BDC8
+		span
+			position: absolute
+			font-weight: bold
+			color: #B8BDC8
+			left: -23px
+			top: 0
+
+.location-search-form
+	padding: 69px 59px 24px 24px
+	border-bottom: 1px solid #D8DBE1
+
+.location-seach-footer
+	font-size: 11px
+	line-height: 1.18
+	color: #ACB5C2
+	padding: 16px 59px 24px 24px
+	p
+		margin: 0
+
+.search-results-row
+	display: flex
+	margin-top: 35px
+	margin-bottom: 29px
+	h5
+		font-weight: normal
+		opacity: .38
+		margin-bottom: 20px
+
+.search-results-list
+	flex: 0 0 50%
+	width: 100%
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+
+.search-results-item
+	display: flex
+	font-size: 15px
+	text-decoration: none !important
+	color: #000
+	transition: $time
+	margin-bottom: 7px
+	margin-right: 158px
+	.title
+		flex: 0 0 60%
+		padding-right: 30px
+	.price
+		padding-right: 30px
+		s
+			font-size: 13px
+			margin-left: 5px
+	&:hover
+		color: #8291a5
+
+.discount
+	font-size: 12px
+	color: $red
+	height: 26px
+	line-height: 24px
+	border: 1px solid $red
+	border-radius: 13px
+	font-weight: 500
+	padding: 0 20px 0 10px
+	white-space: nowrap
+	display: inline-block
+
+.best-selling-col
+	flex: 0 0 294px
+	max-width: 294px
+	width: 100%
+	margin-right: 149px
+	opacity: 1 !important
+
+.best-selling
+	.owl-nav
+		margin-bottom: 23px
+	.product-preview-price
+		.price
+			s
+				display: block
+				margin: 0
+	.product-preview
+		padding: 0 14px 24px 29px
+	.product-preview-img
+		img
+			max-width: 155px
+	.product-preview-subtitle
+		font-size: 9px
+		margin: 0
+	.product-preview-title
+		font-size: 13px
+		margin-bottom: 15px
+	.product-preview-articul
+		font-size: 9px
+	.product-preview-price
+		align-items: flex-end
+
+.product-preview
+	border: 1px solid #D8DBE1
+	position: relative
+	padding: 29px 30px 34px
+	display: flex
+	flex-direction: column
+	&:hover
+		.product-preview-added
+			transform: translateY(0)
+			opacity: 1
+		.product-liked,
+		.product-compare
+			opacity: 1
+.product-preview-img
+	display: flex
+	align-items: center
+	justify-content: center
+	min-height: 185px
+	flex: 1
+	overflow: hidden
+	a
+		display: flex
+		align-items: center
+		justify-content: center
+	&:hover
+		img
+			transform: scale(1.05)
+	img
+		max-width: 330px
+		width: 100% !important
+		transition: $time
+		width: 100%
+
+.product-preview-sticks
+	position: absolute
+	top: 28px
+	left: 30px
+	z-index: 2
+
+.stick
+	display: block
+	margin-bottom: 8px
+	text-align: center
+	width: 40px
+	height: 40px
+	line-height: 40px
+	background-color: #BEDEDF
+	border-radius: 50%
+	font-size: 9px
+	text-transform: uppercase
+	font-weight: bold
+	&:last-child
+		margin-bottom: 0
+
+.stick-green
+	background-color: #BEDEDF
+
+.stick-yellow
+	background-color: #FAE670	
+
+.stick-pink
+	background-color: #E8D3D6
+
+.product-preview-subtitle
+	color: #8291A5
+	font-size: 12px
+	margin-bottom: 7px
+	a
+		color: inherit!important
+		text-decoration: none !important
+
+.product-preview-title
+	font-size: 19px
+	margin-bottom: 5px
+	line-height: 1.2
+	a
+		color: $text
+		text-decoration: none !important
+		transition: $time
+		display: inline-block
+		&:hover
+			opacity: .7
+
+.product-preview-articul
+	font-size: 11px
+	margin-bottom: 16px
+
+.product-preview-price
+	display: flex
+	align-items: center
+	white-space: nowrap
+	flex-wrap: wrap
+	.price
+		line-height: 1.3
+		font-size: 19px
+		font-weight: bold
+		s
+			font-size: 13px
+			line-height: 1
+			font-weight: normal
+			margin-left: 9px
+	.sale
+		display: inline-block
+		padding: 0 4px
+		color: #fff
+		font-size: 10px
+		height: 17px
+		line-height: 17px
+		background-color: #000
+		margin-left: 7px
+	.discount
+		margin-left: 13px
+
+.product-preview-added
+	position: absolute
+	right: 11px
+	bottom: 9px
+	width: 40px
+	height: 40px
+	background-color: #000
+	border-radius: 50%
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: $time
+	opacity: 0
+	transform: translateY(10px)
+	background-image: url(../img/icons/basket-plus.svg)
+	background-size: 18px
+	background-repeat: no-repeat
+	background-position: center
+	&.added
+		background-image: url(../img/icons/check.svg)
+		background-size: 14px
+		background-color: $green
+	&:hover
+		background-color: $green
+
+.owl-nav
+	position: absolute
+	bottom: 100%
+	margin-bottom: 30px
+	right: 0
+	button
+		outline: none !important
+		display: inline-block
+		&:hover
+			span
+				opacity: .5
+		span
+			font-size: 0
+			display: inline-block
+			transition: $time
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: center
+			width: 11px
+			height: 17px
+		&.disabled
+			cursor: default !important
+			span
+				opacity: .17
+	.owl-prev
+		margin-right: 38px
+		span
+			background-image: url(../img/icons/arrow-left.svg)
+	.owl-next
+		span
+			background-image: url(../img/icons/arrow-right.svg)
+
+.search-category-list
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+
+.product-preview--list
+	display: flex
+	align-items: center
+	flex-direction: row
+	padding: 20px 39px 16px 19px
+	.product-preview-img
+		margin-right: 30px
+		min-width: 150px
+		min-height: 0
+	.product-preview-subtitle
+		font-size: 10px
+		margin-bottom: 7px
+	.product-preview-title
+		font-size: 16px
+		margin-bottom: 7px
+	.product-preview-articul
+		font-size: 10px
+		margin-bottom: 8px
+.in-stock
+	font-size: 11px
+	position: relative
+	padding-left: 13px
+	margin-bottom: 3px
+	margin-left: 10px
+	&:after
+		content: ''
+		position: absolute
+		top: 5px
+		left: 0
+		width: 8px
+		height: 8px
+		border-radius: 50%
+		background-color: $green
+
+.section-title
+	padding-bottom: 23px
+	h2, h3
+		margin: 0
+
+.recently-searched-slider
+	opacity: 1 !important
+	.owl-stage-outer
+		margin-right: -1px
+	.product-preview
+		border-right-width: 0
+	.owl-item
+		height: auto
+		&:last-child
+			.product-preview
+				border-right-width: 1px
+	.owl-stage
+		display: flex
+		align-items: stretch
+	.product-preview
+		height: 100%
+
+.recently-searched
+	h3
+		font-size: 23px
+
+.body-overlay
+	background-color: #483D3D
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	bottom: 0
+	transition: $time
+	opacity: 0
+	visibility: hidden
+	z-index: 5
+	&.fade
+		opacity: .45
+		visibility: visible
+
+.account-dropdown
+	position: absolute
+	top: 100%
+	margin-top: 24px
+	right: -31px
+	width: 447px
+	background-color: #fff
+	box-shadow: 0px 3px 50px 0px rgba(69,76,90,0.41)
+	padding: 26px 29px 26px 32px
+	font-size: 14px
+	visibility: hidden
+	opacity: 0
+	z-index: 4
+	transition: $time
+	transform: translateY(-20px)
+	&.visible
+		opacity: 1
+		transform: translateY(0)
+		visibility: visible
+	&:after
+		content: ''
+		position: absolute
+		height: 18px
+		width: 18px
+		top: -18px
+		right: 32px
+		border: 9px solid transparent
+		border-bottom-color: #fff
+	.dropdown-title
+		margin-bottom: 18px
+	h4
+		font-weight: normal
+		font-size: 15px
+		margin-bottom: 0
+		display: inline-block
+		position: relative
+	p
+		line-height: 1.2
+		margin-bottom: 15px
+		a
+			color: inherit!important
+			text-decoration: underline
+	.phone
+		font-size: 20px
+		font-weight: bold
+	&.added
+		.dropdown-title
+			h4
+				&:after
+					content: ''
+					position: absolute
+					right: -18px
+					top: 0
+					width: 7px
+					height: 7px
+					border-radius: 50%
+					background-color: $green
+
+.dropdown-close
+	display: none
+
+.account-form
+	position: relative
+	margin-bottom: 15px
+
+.account-form-group
+	position: relative
+
+.form-control
+	width: 100%
+	border: 1px solid #D8DBE1
+	height: 52px
+	padding-left: 18px
+	padding-right: 115px
+
+.text-btn
+	font-size: 14px
+	border: none
+	outline: none !important
+	background-color: transparent
+	padding: 0
+	margin: 0
+	text-decoration: underline
+	text-decoration-style: dashed
+	position: absolute
+	right: 23px
+	top: 15px
+	cursor: pointer
+	&:hover
+		text-decoration: none
+
+.mute-text
+	font-size: 11px
+	opacity: .45
+	padding-top: 2px
+	p
+		&:last-child
+			margin-bottom: 0
+
+.danger-text
+	color: #C61428
+	font-size: 12px
+	margin-top: 15px
+
+.status-list
+	margin-bottom: 25px
+	p
+		margin-bottom: 10px
+		display: flex
+		span
+			min-width: 59px
+			padding-right: 5px
+		&:last-child
+			margin-bottom: 0
+
+.phone-code-wrapper
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: #fff
+	padding: 26px 29px 26px 32px
+	display: none
+	.code-timer
+		padding-top: 20px
+		color: #8E9CAE
+		margin-bottom: 30px
+.basket-dropdown-items
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		left: -32px
+		right: -29px
+		bottom: 0
+		height: 1px
+		background-color: #ECEEF1
+	.product-preview
+		border: none
+		border-bottom: 1px solid #ECEEF1
+		padding: 17px 0
+		&:last-child
+			border-bottom: none
+	.product-preview-img
+		height: auto
+		margin-right: 25px
+		width: 96px
+		min-width: 0
+		flex: none
+		img
+			max-width: 96px
+	.product-preview-title
+		font-size: 15px
+		margin-bottom: 0
+
+.basket-dropdown-total
+	padding-top: 20px
+	h5
+		font-size: 12px
+		font-weight: normal
+		margin: 0
+
+.basket-dropdown-total-price
+	display: flex
+	align-items: flex-end
+	line-height: 1
+	margin-bottom: 19px
+	.price
+		font-size: 24px
+		margin-right: 11px
+		font-weight: bold
+
+.bonuses
+	height: 26px
+	line-height: 24px
+	display: inline-block
+	border: 1px solid #BEDEDF
+	padding: 0 11px 0 6px
+	font-size: 12px
+	color: #3F5D5E
+
+.btn
+	display: inline-block
+	padding: 0 40px
+	height: 52px
+	line-height: 52px
+	color: #fff
+	border-right: 0
+	outline: none !important
+	cursor: pointer
+	background-color: #000
+	transition: $time
+	text-decoration: none !important
+	text-align: center
+	font-size: 14px
+	border: none
+	white-space: nowrap
+	&:hover
+		opacity: .75
+		color: #fff
+	&:disabled
+		opacity: .5
+		cursor: default
+
+.btn-border
+	background-color: transparent
+	border: 1px solid #000
+	color: #000
+	line-height: 50px
+	&:hover
+		color: #000
+	.icon
+		margin-left: 10px
+		transform: translateY(-1px)
+
+.basket-dropdown-links
+	display: flex
+	margin-bottom: 20px
+	.btn
+		padding: 0 20px
+		height: 44px
+		line-height: 44px
+	.btn-border
+		left: 42px
+
+.go-to-basket
+	flex: 1
+	margin-right: 9px
+
+.checkbox-label
+	position: relative
+	display: inline-block
+	margin: 0
+	font-size: 13px
+	input
+		position: absolute
+		z-index: -1
+		opacity: 0
+		visibility: hidden
+		&:checked + span:before
+			transform: scale(1)
+		&:disabled
+			+ span
+				&:before
+					display: none
+				&:after
+					border-color: #E6E6E6
+					background-color: #E6E6E6
+					cursor: default
+	span
+		display: block
+		padding-left: 33px
+		line-height: 20px
+		position: relative
+		small
+			display: block
+			color: #B6BFCA
+			font-size: inherit
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			height: 20px
+			width: 20px
+			border: 1px solid #000
+			cursor: pointer
+		&:before
+			content: ''
+			position: absolute
+			width: 8px
+			height: 8px
+			left: 6px
+			top: 6px
+			background-color: #000
+			transition: all .15s ease
+			transform: scale(0)
+	a
+		text-decoration: underline
+		color: #000 !important
+
+.basket-dropdown-checkbox
+	margin-bottom: 6px
+
+.header-bottom
+	display: flex
+	justify-content: center
+	padding-top: 15px
+
+.main-menu-header
+	height: 51px
+	align-items: center
+	background-color: #F5F5F5
+	display: none
+	flex-wrap: wrap
+
+.main-menu-catalog-link
+	display: none
+	flex: 0 0 100%
+	a
+		display: block
+		font-size: 14px
+		color: #000 !important
+		text-decoration: underline
+		padding-left: 37px
+		height: 45px
+		line-height: 44px
+		border-bottom: 1px solid #D8DBE1
+
+.menu-go-back,
+.menu-close
+	flex: 0 0 51px
+	width: 51px
+	height: 51px
+	display: flex
+	align-items: center
+	justify-content: center
+
+.menu-go-back
+	display: none
+	img
+		width: 22px
+	&.show
+		display: flex
+
+.menu-close
+	img
+		width: 10px
+
+.main-menu-title
+	flex: 1
+	text-align: center
+	font-size: 16px
+
+.main-menu
+	border-bottom: 2px solid #D8DBE1
+	margin-right: 22px
+	margin-left: 70px
+
+.main-menu-body
+	display: flex
+
+.menu-item
+	padding-right: 31px
+	> a
+		height: 55px
+		line-height: 55px
+		position: relative
+		display: block
+		font-size: 13px
+		color: #000!important
+		text-decoration: none !important
+		transition: $time
+		&:after
+			content: ''
+			position: absolute
+			bottom: -2px
+			left: 0
+			width: 100%
+			height: 2px
+			background-color: #000
+			opacity: 0
+			transition: $time
+			z-index: 6
+		&.active,
+		&:hover
+			&:after
+				opacity: 1
+	&:hover
+		.menu-dropdown
+			visibility: visible
+			opacity: 1
+			transform: translateY(0)
+
+.menu-stocks
+	margin-right: 19px
+	margin-top: 10px
+	.btn
+		height: 30px
+		line-height: 30px
+		padding: 0 20px
+		border-radius: 3px
+
+.menu-burger
+	display: inline-flex
+	width: 31px
+	height: 18px
+	position: relative
+	align-items: flex-start
+	&:hover
+		span:before
+			width: 100%
+	span
+		display: inline-block
+		width: 100%
+		height: 2px
+		border-radius: 1px
+		background-color: #000
+		transition: $time
+		&:after,
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			height: 2px
+			border-radius: 1px
+			background-color: #000
+			transition: $time
+		&:after
+			top: 8px
+			width: 100%
+		&:before
+			bottom: 0
+			width: 16px
+
+.menu-dropdown
+	position: absolute
+	left: 0
+	width: 100%
+	background-color: #fff
+	top: 100%
+	padding-top: 29px
+	visibility: hidden
+	opacity: 0
+	transition: $time
+	padding-bottom: 61px
+	z-index: 5
+
+.menu-dropdown-row
+	display: flex
+
+.menu-category-product
+	flex: 0 0 18%
+	width: 100%
+	.product-liked
+		left: 16px
+		right: auto
+	h4
+		font-size: 15px
+		font-weight: normal
+		line-height: 1.27
+		margin-bottom: 26px
+	.product-preview
+		padding: 0
+		border: none
+	.product-preview-sticks
+		left: auto
+		top: 0
+		right: 0
+	.product-preview-img
+		height: 222px
+		img
+			max-width: 250px
+			min-width: 203px
+	.product-preview-subtitle
+		font-size: 12px
+	.product-preview-title
+		font-size: 19px
+		margin-bottom: 25px
+	.product-preview-articul
+		margin-bottom: 35px
+		font-size: 11px
+	.product-preview-price .price s
+		display: inline
+		margin-left: 11px
+		font-size: 15px
+
+.menu-list
+	padding-left: 125px
+	font-size: 15px
+	flex: 0 0 25%
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		position: relative
+	li
+		padding-bottom: 11px
+		transition: $time
+		&:hover
+			padding-left: 9px
+			> ul
+				display: block
+		a
+			color: #000!important
+			text-decoration: none !important
+			position: relative
+			display: block
+			transition: $time
+		&.has-child > a
+			&:after
+				content: ''
+				position: absolute
+				width: 5px
+				height: 9px
+				right: 0
+				top: 8px
+				background-image: url(../img/icons/arrow-right.svg)
+				background-size: contain
+				background-repeat: no-repeat
+				background-position: center
+		ul
+			position: absolute
+			left: 100%
+			padding-left: 85px
+			top: 0
+			width: calc(100% + 85px)
+			display: none
+
+.menu-burger-dropdown
+	position: absolute
+	top: 100%
+	left: 0
+	width: 100%
+	padding-top: 24px
+	padding-bottom: 61px
+	transition: $time
+	opacity: 0
+	transform: translateY(-20px)
+	visibility: hidden
+	background-color: #fff
+	z-index: 6
+	&.fade
+		visibility: visible
+		opacity: 1
+		transform: translateY(0)
+
+.menu-burger-row
+	display: flex
+
+.menu-news
+	flex: 0 0 309px
+	max-width: 309px
+	width: 100%
+	opacity: 1 !important
+	margin-right: 138px
+
+.menu-news-item
+	text-align: center
+	font-size: 14px
+	line-height: 1.36
+	img
+		width: 100%
+		margin-bottom: 16px
+	h3
+		font-size: 24px
+		font-weight: normal
+		line-height: 1.08
+		margin-bottom: 8px
+		max-width: 80%
+		margin: 0 auto 8px
+	p
+		max-width: 80%
+		margin-left: auto
+		margin-right: auto
+		&:last-of-type
+			margin-bottom: 0
+
+.owl-dots
+	display: flex
+	justify-content: center
+	margin-top: 22px
+
+.owl-dot
+	transition: $time
+	outline: none !important
+	width: 8px
+	height: 8px
+	border-radius: 50%
+	background-color: #E5E7E9!important
+	margin-right: 13px
+	&.active
+		background-color: #000 !important
+		transform: translateY(8px)
+	&:last-child
+		margin-right: 0
+
+.menu-burger-nav
+	padding-top: 27px
+	margin-right: 157px
+	h3
+		font-size: 15px
+		font-weight: normal
+		margin-bottom: 17px
+	ul
+		font-size: 15px
+		list-style-type: none
+		margin: 0
+		padding: 0
+		li
+			margin-bottom: 11px
+			&:last-child
+				margin-bottom: 0
+			a
+				transition: $time
+				text-decoration: none !important
+				color: #000 !important
+				display: inline-block
+				&:hover
+					padding-left: 9px
+
+.menu-contacts
+	padding-top: 27px
+	max-width: 407px
+	h3
+		font-size: 15px
+		font-weight: normal
+		margin-bottom: 17px
+
+.menu-contacts-row
+	display: flex
+	flex-wrap: wrap
+
+.contacts-phone
+	width: 100%
+	margin-bottom: 11px
+	.phone
+		font-size: 19px
+		font-weight: bold
+
+.contacts-item
+	flex: 0 0 50%
+	width: 100%
+	font-size: 15px
+	margin-bottom: 11px
+	h4
+		font-size: 11px
+		font-weight: normal
+		color: #ACB5C2
+		margin: 0
+	a
+		color: #000!important
+		text-decoration: underline
+	p
+		margin: 0
+
+.contacts-social
+	padding-top: 37px
+	width: 100%
+	h4
+		font-size: 18px
+		font-weight: normal
+		margin-bottom: 23px
+
+.soc-nav
+	display: flex
+	a
+		margin-right: 36px
+		text-decoration: none !important
+		transition: $time
+		&:hover
+			opacity: .7
+		&:last-child
+			margin-right: 0
+		img
+			max-width: 19px
+
+.main-banner
+	height: 100%
+	color: #fff
+	padding: 90px 70px
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	position: relative
+
+.banner-link
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 1
+
+.banner-subtitle
+	opacity: .37
+	margin-bottom: 20px
+
+.banner-content
+	max-width: 50%
+	line-height: 1.44
+	h2
+		font-weight: normal
+		font-size: 64px
+		line-height: 1
+		margin-bottom: 8px
+	p
+		font-size: 18px
+		opacity: .73
+		&:last-of-type
+			margin-bottom: 0
+
+.banner-top-sale
+	border: 1px solid #D8DBE1
+	border-left-width: 0
+	border-bottom-width: 0
+	padding: 27px 33px 35px
+	h2
+		font-size: 27px
+		font-weight: normal
+		width: 80%
+		margin-bottom: 27px
+		line-height: 1.05
+	.product-preview
+		border: none
+		padding: 0
+	.product-preview-sticks
+		left: 0
+	.product-preview-img
+		height: auto
+		margin-bottom: 26px
+		img
+			max-width: 243px
+	.product-preview-subtitle
+		font-size: 12px
+	.product-preview-title
+		font-size: 24px
+	.product-preview-price
+		.price
+			font-size: 22px
+			s
+				font-size: 17px
+		.sale
+			transform: translateY(-4px)
+	.in-stock
+		margin-left: 18px
+
+
+
+
+.product-buyed-row
+	display: flex
+	align-items: center
+	justify-content: space-between
+	margin-bottom: 30px
+
+.product-buyed
+	font-size: 13px
+	color: #8291A5
+	span
+		color: #000
+
+.timer
+	font-size: 14px
+	height: 28px
+	line-height: 26px
+	padding: 0 15px
+	border: 1px solid #000
+
+.main-about-row
+	padding-top: 68px
+.main-about-item
+	margin-bottom: 40px
+	padding-right: 30px
+	h3
+		font-size: 19px
+		font-weight: normal
+		margin-bottom: 10px
+	p
+		color: #8C8C8C
+		font-size: 15px
+		&:last-of-type
+			margin-bottom: 0
+
+.main-about-item-nmb
+	text-transform: uppercase
+	font-weight: bold
+	font-size: 12px
+	margin-bottom: 37px
+
+.price
+	white-space: nowrap
+
+.news-banner
+	min-height: 447px
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center right
+	padding: 34px 33px 40px
+	color: #fff
+	line-height: 1.2
+	display: flex
+	flex-direction: column
+	h3
+		font-weight: normal
+		color: #fff
+		width: 80%
+		font-size: 28px
+		margin-bottom: 11px
+	p
+		font-size: 15px
+	.news-banner-content
+		flex: 1
+		margin-bottom: 17px
+	a
+		color: #fff !important
+		text-decoration: underline
+		font-size: 12px
+
+.news-banner-price
+	font-size: 19px
+	font-weight: bold
+	margin-bottom: 9px
+
+.section-title
+	h2
+		font-weight: normal
+		margin: 0
+	h3
+		font-weight: bold
+
+.s-spec-offers
+	.spec-catalog-list
+		padding-top: 30px
+
+.spec-catalog-list
+	display: flex
+	font-size: 14px
+	a
+		color: #000 !important
+		text-decoration: none !important
+		transition: $time
+		margin-right: 39px
+		&:last-child
+			margin-right: 0
+		&:hover
+			opacity: .7
+
+.catalog-grid
+	margin-right: -1px
+	padding-left: 1px
+	[class*=col-]
+		margin-top: -1px
+	[class="col-12"]
+		.product-preview,
+		.sale-block
+			margin-right: 1px
+	.news-banner
+		height: 100%
+.row
+	.product-preview
+		margin-left: -1px
+		height: 100%
+
+.product-preview-body
+	position: relative
+	z-index: 1
+
+.product-preview--big
+	flex-direction: row
+	padding: 0
+	.product-preview-body
+		order: 1
+		flex: 1
+		padding: 29px 30px 34px
+		display: flex
+		flex-direction: column
+	.product-preview-price
+		margin-top: auto
+		.price
+			font-size: 25px
+	.product-preview-img
+		order: 2
+		flex: 0 0 50%
+		a
+			width: 100%
+			height: 100%
+			align-items: flex-end
+		img
+			max-width: none
+	.product-preview-sticks
+		left: auto
+		right: 30px
+	.product-preview-title
+		font-size: 25px
+.gift-link
+	display: inline-block
+	height: 26px
+	line-height: 26px
+	border-radius: 13px
+	color: #fff!important
+	background-color: #4C2887
+	padding: 0 17px 0 13px
+	font-size: 12px
+	margin-left: 17px
+	transition: $time
+	text-decoration: none !important
+	&:hover
+		background-color: #000
+
+.check-all
+	display: block
+	text-align: center
+	display: flex
+	align-items: center
+	justify-content: center
+	font-size: 14px
+	height: 48px
+	line-height: 46px
+	color: #000!important
+	text-decoration: none !important
+	border: 1px solid #D8DBE1
+	margin-left: -1px
+	padding: 0 20px
+	img
+		margin-left: 13px
+		width: 8px
+
+.brand-item
+	font-size: 14px
+	height: 100%
+	margin-bottom: 50px
+	a
+		display: flex
+		flex-direction: column
+		justify-content: center
+		text-align: center
+		color: #000!important
+		height: 100%
+		text-decoration: underline
+		opacity: .35
+		transition: $time
+		&:hover
+			opacity: 1
+
+.brand-img
+	display: flex
+	align-items: center
+	justify-content: center
+	flex: 1
+	img
+		max-width: 100%
+.brand-title
+	margin-top: -10px
+
+.check-all-brand
+	display: inline-flex
+	align-items: center
+	color: #000 !important
+	text-decoration: underline
+	margin-top: 56px
+	img
+		width: 8px
+		margin-left: 26px
+
+.s-products-start
+	[class*=col-]:last-child
+		.products-start-item
+			border-right: none
+	.section-title
+		text-align: center
+		h2
+			font-weight: normal
+
+.products-start-item
+	display: block
+	text-align: center
+	font-size: 19px
+	text-decoration: underline
+	color: #000 !important
+	border-right: 1px solid #D8DBE1
+	padding-bottom: 10px
+	margin-bottom: 25px
+	img
+		width: 48px
+		margin-bottom: 30px
+	span
+		display: block
+
+.s-main-stock
+	background-color: #4C2887
+	color: #fff
+	background-image: url(../img/light.svg)
+	background-size: auto 104%
+	background-repeat: no-repeat
+	background-position: top -12px left 53%
+	padding-top: 50px
+	margin-bottom: 37px
+
+.main-stock-row
+	display: flex
+
+.main-stock-info
+	flex: 0 0 38%
+	width: 100%
+	padding-right: 57px
+	h2
+		line-height: 1.05
+		font-size: 35px
+		font-weight: normal
+		margin-bottom: 16px
+	p
+		opacity: .73
+		font-size: 15px
+		margin-bottom: 46px
+
+.stock-partners
+	display: flex
+	align-items: center
+	font-size: 15px
+	span
+		opacity: .5
+		white-space: nowrap
+	img
+		margin-left: 40px
+
+.main-stock-step
+	text-align: center
+	font-size: 15px
+	&.accent
+		.nmb
+			color: #000
+			background-color: $green
+			border-color: $green
+	.nmb
+		width: 81px
+		height: 81px
+		line-height: 77px
+		border-radius: 50%
+		font-size: 24px
+		margin-bottom: 22px
+		border: 2px solid #FFC800
+		margin-left: auto
+		margin-right: auto
+
+.video-wrapper
+	position: relative
+
+.video-poster
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	transition: $time
+	display: flex
+	flex-direction: column
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	z-index: 1
+	padding: 30px 34px 35px
+	color: #fff
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #000
+		opacity: .46
+	.product-preview-body
+		margin-top: auto
+
+.video-block
+	height: 511px
+	iframe
+		height: 100%
+		width: 100%
+
+.video-master
+	display: flex
+	align-items: center
+	position: relative
+	z-index: 1
+
+.master-avatar
+	margin-right: 19px
+	img
+		width: 64px
+		height: 64px
+		border-radius: 50%
+
+.master-name
+	display: flex
+	flex-direction: column
+	h4
+		font-size: 20px
+		line-height: 1
+		margin: 0
+	span
+		opacity: .66
+		font-size: 13px
+
+.video-play
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	z-index: 1
+	font-size: 14px
+
+.video-play-btn
+	display: flex
+	align-items: center
+	cursor: pointer
+	transition: $time
+	&:hover
+		opacity: .7
+	img
+		width: 54px
+		margin-right: 13px
+
+.video-preview
+	position: relative
+	z-index: 1
+	color: #fff
+	.product-preview-subtitle
+		opacity: .49
+		color: #fff
+	.product-preview-title
+		margin-bottom: 0
+		a
+			color: #fff
+	.product-preview-articul
+		opacity: .74
+
+.post-info
+	margin-top: 20px
+	h2
+		font-size: 30px
+		font-weight: normal
+		margin-bottom: 8px
+		line-height: 1.1
+	a
+		color: #000 !important
+		text-decoration: none !important
+		display: block
+	p
+		margin-bottom: 0
+		font-size: 14px
+		display: flex
+		align-items: flex-start
+		.icon
+			width: 9px
+			margin-right: 8px
+			margin-top: 8px
+
+.video-post
+	.post-info
+		p
+			width: 63%
+
+.post-category
+	font-size: 11px
+	color: #9CA7B7
+	margin-bottom: 9px
+	a
+		color: inherit !important
+		text-decoration: none
+
+.poster-img
+	height: 511px
+	overflow: hidden
+	&:hover
+		img
+			transform: scale(1.03)
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		transition: $time
+
+.blog-post-img
+	height: 265px
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.s-blog-list
+	padding-bottom: 65px
+	.section-title
+		padding-bottom: 49px
+	.owl-nav
+		margin-bottom: 68px
+
+.s-subscribe-news
+	padding: 35px 0 69px
+	border-top: 1px solid #D8DBE1
+
+.subscribe-news-row
+	display: flex
+
+.subscribe-news-info
+	flex: 0 0 45%
+	width: 100%
+	padding-right: 40px
+	display: flex
+	align-items: center
+
+.subscribe-news-img
+	margin-right: 41px
+	img
+		width: 137px
+		margin-left: -10px
+
+.subscribe-news-text
+	margin-top: 15px
+	h2
+		font-size: 30px
+		font-weight: normal
+		margin-bottom: 5px
+	p
+		margin: 0
+
+.subscribe-news-form-wrapper
+	flex: 0 0 55%
+	width: 100%
+	margin-top: 35px
+
+.subscribe-news-info-form
+	max-width: 747px
+
+.subscribe-news-group
+	display: flex
+	margin-bottom: 17px
+	.btn
+		padding: 0 85px
+
+.subscribe-news-input
+	flex: 1
+	margin-right: 16px
+	border: 1px solid #000
+	padding: 0 21px
+	height: 52px
+	&::placeholder
+		color: #000
+
+.footer
+	border-top: 1px solid #D8DBE1
+	padding-top: 68px
+
+.footer-row
+	flex-wrap: wrap
+	display: flex
+
+.footer-col
+	flex: 0 0 15%
+	max-width: 15%
+	width: 100%
+	padding-right: 40px
+	&:last-child
+		padding-right: 0
+
+.footer-item
+	margin-bottom: 65px
+
+.footer-item-title
+	margin-bottom: 21px
+	h3
+		margin: 0
+		font-weight: normal
+		font-size: 18px
+
+.footer-nav
+	font-size: 15px
+	a
+		display: block
+		margin-bottom: 10px
+		color: #000 !important
+		text-decoration: none !important
+		transition: $time
+		&:hover
+			padding-left: 10px
+
+.docs-link
+	display: flex
+	align-items: center
+	color: #000 !important
+	text-decoration: none !important
+	margin-bottom: 16px
+	font-size: 13px
+	&:hover
+		.icon
+			transform: rotate(-22deg)
+	&:last-child
+		margin-bottom: 0
+	.icon
+		display: inline-block
+		width: 28px
+		height: 28px
+		border-radius: 50%
+		line-height: 26px
+		flex: 0 0 28px
+		text-align: center
+		border: 1px solid #000
+		margin-right: 15px
+		font-size: 10px
+		transition: $time
+
+.pay-methods
+	display: flex
+	align-items: center
+	img
+		margin-right: 19px
+		max-height: 16px
+		&:last-child
+			margin-right: 0
+
+.footer-contacts-col
+	flex: 0 0 25%
+	padding-right: 0
+	max-width: 25%
+
+.footer-contacts
+	.phone
+		font-size: 18px
+	.contacts-social
+		padding-top: 33px
+		h4
+			margin-bottom: 13px
+
+.copyright
+	padding: 26px 0
+	border-top: 1px solid #D8DBE1
+	display: flex
+	justify-content: space-between
+	align-items: center
+	font-size: 12px
+	a
+		color: #000 !important
+		text-decoration: underline !important
+
+.open-tablet-search
+	display: none
+
+.product-liked
+	position: absolute
+	right: 16px
+	top: 16px
+	width: 18px
+	height: 18px
+	background-image: url(../img/icons/heart.svg)
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: center
+	cursor: pointer
+	z-index: 2
+	transition: $time
+	opacity: 0
+	&.liked
+		opacity: 1
+		&:after
+			opacity: 1
+			transform: scale(1)
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-image: url(../img/icons/heart-fill.svg)
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		transition: $time
+		opacity: 0
+		transform: scale(0)
+
+.spec-catalog-list-wrapper
+	display: flex
+	display: flex
+	align-items: center
+	justify-content: space-between
+	margin-bottom: 24px
+
+.check-all-posts a
+	align-items: center
+	display: flex
+	font-size: 14px
+	text-decoration: underline
+	color: #000 !important
+	img
+		width: 8px
+		margin-right: 15px
+		transition: $time
+	&:hover
+		img
+			margin-right: 5px
+
+.info-banners-item
+	padding: 33px 39px 37px
+	height: 100%
+
+.info-banners
+	height: 100%
+	.owl-stage-outer,
+	.owl-stage,
+	.owl-item
+		height: 100%
+	.info-banners-item
+		background-color: #BEDEDF
+		background-size: auto 100%
+		background-repeat: no-repeat
+		background-position: right bottom
+		padding-bottom: 144px
+	.info-banner-content
+		width: 40%
+		h3
+			padding-right: 30px
+	.owl-dots
+		position: absolute
+		left: 39px
+		bottom: 45px
+		.owl-dot
+			background-color: #fff !important
+			&.active
+				background-color: #000 !important
+
+.info-banner-content
+	h3
+		margin-bottom: 16px
+		font-size: 37px
+		line-height: 1.05
+	p
+		&:last-of-type
+			margin-bottom: 0
+
+.set-up-banner
+	border: 1px solid #D8DBE1
+	p
+		font-size: 19px
+	ol
+		list-style-type: none
+		padding: 0
+		margin: 25px 0 0
+		counter-reset: item
+		li
+			position: relative
+			padding-left: 35px
+			margin-bottom: 17px
+			&:last-child
+				margin-bottom: 0
+			&:before
+				content: counter(item)
+				counter-increment: item
+				position: absolute
+				left: 0
+				top: 2px
+				width: 21px
+				height: 21px
+				background-color: #000
+				border-radius: 50%
+				color: #fff
+				font-size: 13px
+				line-height: 21px
+				text-align: center
+			h4
+				font-size: 21px
+				margin-bottom: 7px
+				line-height: 1.1
+			p
+				font-size: 13px
+				margin: 0
+
+.bonuses-info
+	color: #fff
+	background-color: #4C2887
+	img
+		max-width: 318px
+		width: 100%
+		margin-left: -26px
+		margin-bottom: -20px
+	h3
+		width: 30%
+
+.s-info-banners
+	padding: 0
+	.row
+		margin: 0 -19px
+		[class*=col-]
+			padding: 0 19px
+
+.s-content
+	padding-top: 0
+	padding-bottom: 70px
+	overflow: hidden
+
+.catalog-sidebar
+	padding-right: 72px
+
+.catalog-sidebar-item
+	margin-bottom: 51px
+	&:last-child
+		margin-bottom: 0
+
+.catalog-sidebar-title
+	display: flex
+	align-items: flex-end
+	margin-bottom: 23px
+	h3
+		font-size: 22px
+		padding-right: 20px
+		line-height: 1.05
+	a
+		font-size: 12px
+		color: #000 !important
+		text-decoration: underline
+		text-decoration-style: dashed
+		margin-left: auto
+		margin-bottom: 6px
+		&:hover
+			text-decoration-style: solid
+
+.catalog-category
+	a
+		display: flex
+		font-size: 14px
+		color: #000
+		text-decoration: none
+		transition: $time
+		justify-content: space-between
+		margin-bottom: 11px
+		&:last-child
+			margin-bottom: 0
+		&:hover
+			color: #ACB5C2
+		span
+			color: #ACB5C2
+
+.filter-item
+	margin-bottom: 34px
+
+.filter-title
+	margin-bottom: 20px
+	display: flex
+	align-items: flex-end
+	h4
+		font-size: 16px
+		margin: 0
+		padding-right: 15px
+		line-height: 1.05
+	a
+		font-size: 12px
+		color: #000 !important
+		text-decoration: underline
+		text-decoration-style: dashed
+		margin-left: auto
+		margin-bottom: 0
+		&:hover
+			text-decoration-style: solid
+
+.quantity-group
+	display: flex
+	margin: 0 -12px
+
+.quantity-group-input
+	width: 100%
+	max-width: 50%
+	flex: 0 0 50%
+	padding: 0 12px
+	position: relative
+	span
+		font-size: 14px
+		position: absolute
+		left: 22px
+		top: 7px
+		width: 23px
+		transition: $time
+	input
+		height: 35px
+		font-size: 14px
+		padding-left: 27px
+		border: 1px solid #000
+		width: 100%
+		&:focus,
+		&.focus
+			& + span
+				opacity: .5
+
+.form-checkbox
+	display: flex
+	margin-bottom: 11px
+	&:last-child
+		margin-bottom: 0
+
+.tooltip
+	position: relative
+	margin-left: auto
+	display: inline-block
+
+.tooltip-title
+	width: 21px
+	height: 21px
+	border-radius: 50%
+	font-size: 12px
+	color: #fff
+	text-align: center
+	line-height: 21px
+	background-color: #000
+	cursor: pointer
+	&:hover
+		& + .tooltip-text
+			opacity: 1
+			visibility: visible
+
+.tooltip-text
+	position: absolute
+	background-color: #E7EAED
+	z-index: 2
+	color: #000
+	line-height: 1.4
+	font-size: 10px
+	padding: 20px
+	text-align: left
+	width: 150px
+	left: 100%
+	top: -10px
+	margin-left: 10px
+	opacity: 0
+	visibility: hidden
+	transition: $time
+	&:after
+		content: ''
+		position: absolute
+		width: 12px
+		height: 12px
+		border: 6px solid transparent
+		border-right-color: #E7EAED
+		left: -12px
+		top: 14px
+
+.color-checkbox-wrapper
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: -9px
+
+.color-checkbox
+	display: inline-block
+	margin-bottom: 9px
+	margin-right: 9px
+	position: relative
+	cursor: pointer
+	&:last-child
+		margin-right: 0
+	&.white
+		span
+			border: 1px solid #000
+			&:before
+				background-image: url(../img/icons/check.svg)
+	input
+		position: absolute
+		top: 0
+		left: 0
+		visibility: hidden
+		z-index: -1
+		opacity: 0
+		&:checked + span
+			&:before
+				opacity: 1
+				transform: scale(1)
+	span
+		display: block
+		width: 32px
+		height: 32px
+		border-radius: 50%
+		overflow: hidden
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-size: 14px
+			background-image: url(../img/icons/check-white.svg)
+			background-repeat: no-repeat
+			background-position: center
+			transition: $time
+			opacity: 0
+			transform: scale(0)
+
+.filter-submit
+	padding-top: 31px
+	.btn
+		height: 41px
+		line-height: 41px
+		span
+			color: #676767
+
+.content-main
+	padding-top: 63px
+
+.breadcrumbs
+	margin-bottom: 10px
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		display: flex
+		flex-wrap: wrap
+		li
+			position: relative
+			color: #ACB5C2
+			font-size: 12px
+			&:last-child
+				a
+					cursor: default
+					color: #000
+			a
+				color: inherit
+				text-decoration: none !important
+				transition: $time
+				&:hover
+					color: #000
+			&:after
+				content: '/'
+				padding: 0 4px
+			&:last-child
+				&:after
+					display: none
+
+.page-title
+	margin-bottom: 40px
+	position: relative
+	h1
+		margin: 0
+
+.go-back-title-link
+	position: absolute
+	right: 100%
+	margin-right: 35px
+	top: 20px
+	img
+		width: 36px
+
+.catalog-sorting
+	margin-bottom: 26px
+
+.sorting-row
+	display: flex
+	align-items: flex-end
+
+.sorting-left
+	display: flex
+	align-items: center
+	flex-wrap: wrap
+
+.sorting-right
+	margin-left: auto
+	margin-bottom: 13px
+
+.sorting-title
+	margin-right: 24px
+	font-size: 14px
+
+.sorting-select
+	margin-right: 55px
+	margin-bottom: 7px
+	.select2
+		width: 100% !important
+		font-size: 14px
+	.select2-container--default .select2-selection--single
+		border: none
+		border-bottom: 2px solid #000
+		border-radius: 0
+		outline: none !important
+	.select2-container--default .select2-selection--single .select2-selection__rendered
+		padding-left: 0
+	.select2-container .select2-selection--single
+		height: 30px
+	.select2-container--default .select2-selection--single .select2-selection__rendered
+		line-height: 28px
+	.select2-container--default .select2-selection--single .select2-selection__arrow
+		width: 6px
+		b
+			border-width: 4px 3px
+			border-color: #000 transparent transparent transparent !important
+			margin-top: -1px
+	.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b
+		transform: rotate(180deg)
+		margin-top: -5px
+
+.select2-dropdown
+	border-color: #000
+	border-radius: 0 !important
+	font-size: 12px
+	line-height: 1.1
+.select2-container--default .select2-results__option--highlighted[aria-selected]
+	background-color: #000
+.select2-results__option
+	padding: 9px 6px
+.select2-results__options
+	&::-webkit-scrollbar
+		width: 3px
+	&::-webkit-scrollbar-track
+		background-color: transparent
+	&::-webkit-scrollbar-thumb
+		background-color: #000
+
+.sorting-checkbox
+	display: flex
+	margin-right: 36px
+	margin-bottom: 7px
+
+.select-view
+	display: flex
+	align-items: center
+	a
+		margin-right: 13px
+		display: flex
+		opacity: .4
+		&.active
+			opacity: 1
+		&:last-child
+			margin-right: 0
+
+.sale-block
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	padding: 56px 35px 66px
+	margin-left: -1px
+	position: relative
+	z-index: 1
+
+.sale-block-logo
+	margin-bottom: 13px
+	img
+		width: 80px
+
+.sale-block-title
+	h2
+		line-height: 1.1
+		font-size: 32px
+		font-weight: normal
+		width: 40%
+		a
+			color: #fff!important
+			text-decoration: none !important
+			display: block
+
+.sale-block-remove
+	position: absolute
+	top: 18px
+	right: 41px
+
+.clear-filter-btn
+	display: none
+	align-items: center
+	color: #000
+	text-decoration: underline
+	text-decoration-style: dashed
+	font-size: 12px
+	transition: $time
+	img
+		width: 18px
+		margin-right: 7px
+	&:hover
+		color: #8a8a8a
+
+.sale-block-remove-btn
+	display: inline-flex
+	align-items: center
+	transform: rotate(-90deg)
+	transform-origin: top right
+	font-size: 10px
+	color: #fff !important
+	text-decoration: none !important
+	align-items: center
+	img
+		width: 24px
+		margin-left: 10px
+
+.product-preview--extrabig
+	.product-preview-img
+		flex: 0 0 65%
+		&:hover
+			img
+				transform: none
+	.product-preview-title
+		margin-right: -115px
+
+.pagination-wrapper
+	margin-top: 27px
+	display: flex
+	align-items: center
+	.btn
+		height: 48px
+		line-height: 46px
+		border: 1px solid #D8DBE1
+
+.show-more
+	flex: 1
+	margin-right: 31px
+	.btn
+		width: 100%
+
+.pagination
+	display: flex
+	margin-top: 2px
+	margin-right: 60px
+	a
+		margin-right: 12px
+		color: #000 !important
+		text-decoration: none !important
+		transition: $time
+		&.active
+			color: #D8DBE1 !important
+		&:last-child
+			margin-right: 0
+
+.pagination-next
+	margin-right: 14px
+
+.pagination-dropdown
+	.select2
+		width: 100% !important
+	.select2-container .select2-selection--single
+		height: 48px
+		border: 1px solid #D8DBE1
+		border-radius: 0
+		outline: none !important
+	.select2-container--default .select2-selection--single .select2-selection__rendered
+		line-height: 46px
+	.select2-container--default .select2-selection--single .select2-selection__arrow
+		height: 46px
+	.select2-container--default .select2-selection--single .select2-selection__arrow
+		width: 20px
+		b
+			border-width: 4px 3px
+			border-color: #000 transparent transparent transparent !important
+			margin-top: -2px
+	.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b
+		transform: rotate(180deg)
+		margin-top: -6px
+
+.s-callback
+	background-color: #4C2887
+	color: #fff
+	padding: 0
+	margin-top: 25px
+	overflow: hidden
+
+.callback-row
+	display: flex
+
+.callback-content
+	flex: 1
+	padding: 65px 54px
+	h2
+		font-size: 35px
+	p
+		font-size: 17px
+		opacity: .7
+		margin-bottom: 40px
+
+.select-messenger
+	display: flex
+	align-items: center
+
+.messengers
+	margin-right: 51px
+	display: flex
+	align-items: center
+	a
+		display: flex
+		margin-right: 34px
+		&:last-child
+			margin-right: 0
+		img
+			width: 50px
+	.facebook-mess
+		img
+			width: 52px
+
+.callback-or
+	margin-right: 50px
+	font-size: 17px
+
+.btn-white
+	background-color: #fff
+	color: #000 !important
+
+.callback-img
+	display: flex
+	align-items: flex-end
+	padding-right: 120px
+	img
+		width: 217px
+
+.catalog-sidebar-mob-title
+	display: none
+	height: 51px
+	text-align: center
+	background-color: #F5F5F5
+	line-height: 51px
+	margin: -20px -20px 0
+	position: relative
+	h3
+		font-size: 16px
+		margin: 0
+		line-height: 51px
+
+.close-catalog-sidebar
+	position: absolute
+	right: 0
+	top: 0
+	display: flex
+	height: 51px
+	width: 51px
+	align-items: center
+	justify-content: center
+	img
+		width: 10px
+
+.catalog-sidebar-open
+	width: 50%
+	margin-bottom: 30px
+	display: none
+
+.catalog-sidebar-open-link
+	width: 100%
+	height: 44px
+	line-height: 44px
+	position: relative
+	display: flex
+	justify-content: center
+	align-items: center
+	span
+		display: inline-block
+		width: 16px
+		height: 16px
+		flex: 0 0 16px
+		border-radius: 50%
+		color: #000
+		background-color: #fff
+		line-height: 16px
+		font-size: 9px
+		text-align: center
+		margin-left: 13px
+
+.filter-btns-wrapper
+	display: none
+	margin: 0 -9px
+	padding-bottom: 18px
+
+.filter-btn
+	width: 100%
+	flex: 0 0 50%
+	max-width: 50%
+	padding: 0 9px
+
+.product-top
+	padding-bottom: 82px
+	.row
+		align-items: flex-start
+
+.breadcrumbs-back
+	display: none
+
+.product-item
+	padding-bottom: 45px
+
+.product-sidebar
+	display: flex
+	flex-direction: column
+	align-items: flex-end
+	position: absolute
+	right: 100%
+	margin-right: -10px
+	top: 0
+	height: 100%
+
+.product-quality-test
+	display: flex
+	flex-direction: column
+	align-items: flex-end
+
+.product-sound
+	display: flex
+	align-items: center
+	font-size: 12px
+	margin-bottom: 10px
+	white-space: nowrap
+	max-width: 200px
+	span
+		margin-right: 15px
+	a
+		width: 66px
+		display: flex
+		justify-content: center
+		flex: 0 0 66px
+		img
+			width: 100%
+
+.product-video
+	display: flex
+	align-items: center
+	font-size: 12px
+	margin-bottom: 10px
+	white-space: nowrap
+	max-width: 200px
+	span
+		margin-right: 15px
+	a
+		width: 66px
+		display: flex
+		justify-content: center
+		flex: 0 0 66px
+		img
+			width: 54px
+			max-width: 100%
+
+.product-images-wrapper
+	position: relative
+	.product-preview-sticks
+		left: 42px
+		top: 37px
+
+.product-timer
+	position: absolute
+	left: 129px
+	top: 39px
+	display: flex
+	align-items: center
+	z-index: 2
+	.timer
+		border: none
+		height: 35px
+		line-height: 35px
+		padding: 0 15px
+		background-color: #000
+		color: #fff
+
+.timer-info
+	font-size: 12px
+	margin-right: 16px
+
+.product-add-btns
+	position: absolute
+	right: 46px
+	top: 37px
+	display: flex
+	align-items: center
+	z-index: 2
+	.product-liked
+		position: relative
+		opacity: 1
+		top: auto
+		right: auto
+		margin-right: 24px
+		width: 21px
+		height: 21px
+	.product-compare
+		opacity: 1
+		position: relative
+		right: auto
+		top: auto
+		width: 18px
+		height: 16px
+		&:after
+			width: 23px
+			height: 17px
+
+.product-color
+	position: absolute
+	bottom: 31px
+	right: 41px
+	z-index: 2
+
+.product-gift
+	margin-right: 17px
+
+.product-gift-link
+	display: inline-flex
+	align-items: center
+	font-size: 14px
+	color: #fff !important
+	text-decoration: none !important
+	background-color: #4C2887
+	height: 40px
+	padding: 0 23px 0 11px
+	border-radius: 20px
+	img
+		margin-right: 9px
+		width: 22px
+
+.product-liked-text
+	margin-right: 19px
+	font-size: 14px
+	a
+		color: #000 !important
+		text-decoration: underline
+
+.product-images
+	border: 1px solid #D8DBE1
+	.owl-item
+		animation-duration: .3s
+	.owl-dots
+		position: absolute
+		bottom: 22px
+		left: 0
+		right: 0
+		margin-top: 0
+.product-images-item
+	height: 887px
+	display: flex
+	align-items: center
+	background-size: 100%
+	background-repeat: no-repeat
+	background-position: center
+	img
+		width: 100%
+		display: none !important
+	&:hover
+		.product-magnify
+			opacity: 1
+
+.product-magnify
+	position: absolute
+	width: 101px
+	height: 101px
+	border-radius: 50%
+	top: 50%
+	left: 50%
+	margin-top: -50px
+	margin-left: -50px
+	cursor: pointer
+	background: inherit
+	overflow: hidden
+	transition: opacity .3s ease
+	opacity: 0
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-image: url(../img/icons/search-plus.svg)
+		background-size: 31px
+		background-position: center
+		background-repeat: no-repeat
+		z-index: 1
+	span
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: inherit
+		filter: blur(3px)
+		z-index: 0
+
+.product-thumbnails
+	margin-top: auto
+	overflow-y: auto
+	overflow-x: hidden
+	margin-top: 50px
+	flex: 1
+	&::-webkit-scrollbar
+		width: 3px
+		height: 3px
+	&::-webkit-scrollbar-track
+		background-color: transparent
+	&::-webkit-scrollbar-thumb
+		background-color: #000
+
+.thumbnails-nav
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	margin-right: 6px
+	min-height: 100%
+
+.thumbnails-item
+	display: inline-flex
+	width: 97px
+	height: 97px
+	align-items: center
+	cursor: pointer
+	position: relative
+	margin-bottom: 23px
+	flex: 0 0 97px
+	max-width: 97px
+	width: 100%
+	&:last-child
+		margin-bottom: 0
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border: 1px solid #D8DBE1
+		transition: $time
+	&.active
+		&:after
+			border: 2px solid #000
+	img
+		width: 100%
+		height: auto
+
+.image-view-block
+	max-width: 880px
+	width: 100%
+	img
+		width: 100%
+
+.product-header
+	border-bottom: 1px solid #D8DBE1
+
+.product-rating
+	display: flex
+	align-items: center
+	margin-bottom: 24px
+
+.rating-qnt
+	position: relative
+	display: inline-block
+	height: 31px
+	svg
+		width: 50px
+		height: 31px
+
+.rating-progress
+	position: absolute
+	left: 0
+	top: 0
+	height: 100%
+	&:after
+		content: ''
+		position: absolute
+		left: 100%
+		top: 0
+		bottom: 0
+		border-width: 15px 8px
+		border-color: transparent
+		border-style: solid
+		border-left-color: inherit
+
+.rating-number
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	line-height: 31px
+	text-align: center
+	font-size: 14px
+	padding-right: 8px
+
+.rating-reviews-link
+	margin: 0 11px
+	font-size: 14px
+	color: #000 !important
+	text-decoration: underline !important
+
+.product-article
+	margin-left: auto
+	font-size: 14px
+
+.product-price
+	display: flex
+	align-items: flex-end
+	margin-bottom: 24px
+	.price
+		font-size: 32px
+		font-weight: bold
+		line-height: 1.1
+		margin-right: 15px
+		s
+			display: block
+			font-size: 17px
+			font-weight: normal
+	.bonuses
+		margin-bottom: 5px
+
+.product-select-color
+	display: none
+	margin-bottom: 15px
+	.color-checkbox-wrapper
+		margin-bottom: 0
+
+.product-select-color-title
+	font-size: 12px
+	margin-right: 14px
+	margin-top: 8px
+
+.product-btns
+	margin-bottom: 28px
+	padding-right: 140px
+	.btn
+		display: block
+		margin-bottom: 15px
+		&:last-child
+			margin-bottom: 0
+
+.add-to-basket
+	background-image: url(../img/icons/basket.svg)
+	background-size: 20px
+	background-repeat: no-repeat
+	background-position: left 20px top 50%
+
+.product-isntallment-plan
+	display: flex
+	margin-bottom: 30px
+	align-items: center
+	.tooltip
+		margin-left: 16px
+	.tooltip-text
+		left: 50%
+		top: 100%
+		margin-top: 10px
+		right: auto
+		margin-left: -75px
+		&:after
+			bottom: 100%
+			top: auto
+			left: 50%
+			margin-left: -6px
+			border-color: transparent!important
+			border-bottom-color: #E7EAED!important
+
+.product-delivery
+	border-bottom: 1px solid #D8DBE1
+	padding: 16px 0
+	h4
+		font-size: 15px
+		font-weight: bold
+		margin-bottom: 8px
+
+.product-delivery-row
+	display: flex
+	justify-content: space-between
+
+.product-delivery-item
+	width: 100%
+	flex: 0 0 45%
+	max-width: 45%
+	font-size: 12px
+	line-height: 1.3
+	padding-left: 21px
+	position: relative
+	a
+		color: #000 !important
+		text-decoration: underline
+	img
+		height: 13px
+		margin-right: 5px
+	&:after
+		content: ''
+		position: absolute
+		height: 13px
+		left: 0
+		top: 0
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		width: 18px
+
+.delivery-location:after
+	background-image: url(../img/icons/mark.svg)
+	width: 13px
+
+.delivery-price:after
+	background-image: url(../img/icons/box.svg)
+	width: 18px
+
+.product-short-desctiption
+	padding: 33px 0 44px
+	h3
+		font-size: 20px
+		font-weight: bold
+		margin-bottom: 18px
+
+.short-desctiption-list
+	list-style-type: none
+	padding: 0
+	margin: 0
+	li
+		font-size: 14px
+		display: flex
+		margin-bottom: 3px
+		&:last-child
+			margin-bottom: 0!important
+		span
+			flex: 0 0 224px
+			padding-right: 10px
+			color: #909397
+
+.open-all-short-descr
+	margin-top: 8px
+	font-size: 14px
+	color: #000 !important
+	text-decoration: underline
+	display: inline-block
+
+.product-descr
+	font-size: 14px
+	h4
+		font-weight: bold
+		font-size: 15px
+		margin-bottom: 10px
+	p:last-of-type
+		margin-bottom: 0
+
+.tabs-nav-wrapper
+	display: flex
+	justify-content: space-between
+	align-items: flex-end
+	border-bottom: 2px solid #D8DBE1
+
+.tabs-nav
+	display: flex
+
+.tabs-link
+	padding: 0 33px 11px 16px
+	color: #000 !important
+	text-decoration: none !important
+	font-size: 17px
+	position: relative
+	white-space: nowrap
+	span
+		font-size: 11px
+	&:after
+		content: ''
+		position: absolute
+		bottom: -2px
+		background-color: #000
+		height: 2px
+		left: 0
+		width: 100%
+		z-index: 1
+		transition: $time
+		opacity: 0
+	&.active
+		&:after
+			opacity: 1
+
+.up-btn
+	display: inline-flex
+	font-size: 14px
+	color: #000 !important
+	text-decoration: underline
+	text-decoration-style: dashed
+	margin-bottom: 13px
+	img
+		width: 25px
+		margin-left: 7px
+
+.tab-item
+	display: none
+	padding-top: 38px
+	font-size: 14px
+	h3
+		font-size: 15px
+		font-weight: bold
+		margin-bottom: 22px
+	.short-desctiption-list
+		li
+			margin-bottom: 11px
+			span
+				flex: 0 0 285px
+	ol
+		list-style-type: none
+		padding: 0
+		margin: 25px 0 0
+		counter-reset: item
+		li
+			position: relative
+			padding-left: 26px
+			margin-bottom: 17px
+			&:last-child
+				margin-bottom: 0
+			&:before
+				content: counter(item)
+				counter-increment: item
+				position: absolute
+				left: 0
+				top: 2px
+				width: 16px
+				height: 16px
+				background-color: #000
+				border-radius: 50%
+				color: #fff
+				font-size: 8px
+				line-height: 16px
+				text-align: center
+.review-sort
+	display: flex
+	margin-bottom: 35px
+	.sorting-title
+		padding-top: 2px
+
+.review-item
+	margin-bottom: 44px
+	display: flex
+	&:last-child
+		margin-bottom: 0
+
+.review-img
+	margin-right: 17px
+	img
+		width: 45px
+		height: 45px
+		border-radius: 50%
+		object-fit: cover
+
+.review-content
+	padding-top: 11px
+
+.review-name
+	display: flex
+	align-items: center
+	white-space: nowrap
+	margin-bottom: 11px
+	h4
+		font-size: 16px
+		margin-right: 28px
+		margin-bottom: 0
+
+.review-buyed
+	display: flex
+	align-items: flex-start
+	img
+		width: 23px
+		margin-right: 8px
+
+.review-rating
+	display: flex
+	align-items: center
+
+.user-rating
+	display: inline-flex
+	position: relative
+	margin-right: 11px
+	span
+		position: absolute
+		left: 0
+		top: 0
+		height: 31px
+		line-height: 31px
+		width: 100%
+		text-align: center
+		font-size: 14px
+		padding-right: 4px
+
+.rating-svg
+	width: 41px
+	height: 31px
+	&.five
+		fill: #359E00
+	&.four
+		fill: #8CB400
+	&.three
+		fill: #C1C710
+	&.two
+		fill: #F6C000
+	&.one
+		fill: #F99F47
+
+
+.user-opinion
+	font-size: 13px
+	color: #909397
+
+.review-rating
+	margin-bottom: 17px
+
+.review-usage
+	margin-bottom: 20px
+	font-size: 13px
+
+.review-text
+	font-size: 14px
+
+.add-review-wrapper
+	text-align: center
+	margin-top: 44px
+	padding-top: 44px
+	border-top: 1px solid #ECEEF1
+	.btn
+		padding: 0 80px
+
+.review-total-item
+	margin-bottom: 11px
+	.review-rating
+		margin-bottom: 0
+	.reviews-quantity
+		margin-left: auto
+		font-size: 14px
+		a
+			color: #000!important
+			text-decoration: underline
+
+.tab-row
+	display: flex
+
+.tab-left
+	flex: 1
+	padding-right: 69px
+
+.prod-docs-row
+	display: flex
+
+.prod-docs-col
+	width: 100%
+	flex: 0 0 50%
+	max-width: 50%
+	padding: 0 25px
+	&:first-child
+		padding-left: 0
+	&:last-child
+		padding-right: 0
+	h3
+		margin-bottom: 9px
+	p
+		min-height: 69px
+		margin-bottom: 30px
+
+.prod-docs-item
+	display: flex
+	margin-bottom: 29px
+	position: relative
+	align-items: flex-start
+	color: #000 !important
+	text-decoration: none !important
+
+.doc-img
+	display: flex
+	margin-right: 12px
+	img
+		width: 32px
+
+.doc-info
+	flex: 1
+	padding-top: 1px
+	padding-right: 20px
+
+.doc-title
+	text-decoration: underline
+	display: block
+
+.doc-size
+	font-size: 10px
+	line-height: 1
+	display: block
+
+.doc-vers
+	min-width: 75px
+
+.product-articles
+	.blog-post-preview
+		margin-bottom: 49px
+
+.product-card
+	border: 2px solid #000
+	padding: 27px 27px 35px
+	.product-preview-title
+		margin-bottom: 0
+	.product-preview-price
+		flex-wrap: wrap
+		margin-bottom: 17px
+		.price s
+			font-size: 15px
+	.in-stock
+		display: block
+		width: 100%
+		margin-left: 0
+	.product-btns
+		padding-right: 0
+		margin-bottom: 14px
+		.btn
+			padding: 0 10px
+			margin-bottom: 7px
+			&:last-child
+				margin-bottom: 0
+		.add-to-basket
+			background-image: none
+	.product-isntallment-plan
+		margin-bottom: 22px
+	.product-delivery
+		border-bottom: none
+		border-top: 1px solid #d8dbe1
+		padding-bottom: 0
+	.product-delivery-item
+		flex: 0 0 48%
+		max-width: 48%
+
+.product-card-main
+	display: flex
+
+.product-card-img
+	margin-right: 19px
+	text-align: center
+	flex: 0 0 114px
+	max-width: 114px
+	img
+		width: 100%
+
+.open-full-img
+	margin-top: 14px
+	font-size: 12px
+	text-decoration: underline
+	text-decoration-style: dashed
+	color: #000 !important
+
+.product-card-descr
+	flex: 1
+	max-width: calc(100% - 133px)
+
+.products-plus
+	&:after
+		content: ''
+		position: absolute
+		left: 0
+		top: -1px
+		right: -0
+		bottom: -1px
+		border: 1px solid #D8DBE1
+		z-index: -1
+	.owl-stage
+		display: flex
+	.owl-item:last-child
+		.products-plus-item
+			border-right-width: 0
+
+.products-plus-item
+	position: relative
+	border-right: 1px solid #D8DBE1
+	height: 100%
+	&:hover
+		.product-replace
+			opacity: 1
+	.product-preview
+		border: none
+		margin: 0
+		padding-left: 44px
+		padding-right: 44px
+
+.product-replace
+	position: absolute
+	top: 27px
+	right: 29px
+	font-size: 14px
+	transition: $time
+	opacity: 0
+	a
+		color: #000 !important
+		text-decoration: underline
+		text-decoration-style: dashed
+
+.products-plus-add
+	padding: 29px 44px 45px
+	display: flex
+	align-items: flex-end
+	height: 100%
+	img
+		width: 100%
+
+.products-plus-add-link
+	position: absolute
+	top: 29px
+	left: 0
+	right: 0
+	text-align: center
+	font-size: 14px
+	a
+		text-decoration: underline
+		color: #000 !important
+
+.products-plus-item-sum
+	position: absolute
+	top: 50%
+	right: -20px
+	margin-top: -20px
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	line-height: 38px
+	text-align: center
+	font-size: 40px
+	color: #000
+	border: 1px solid #000
+	z-index: 2
+	cursor: pointer
+	transition: $time
+	overflow: hidden
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-image: url(../img/icons/plus-black.svg)
+		background-size: 12px
+		background-position: center
+		background-repeat: no-repeat
+		transition: $time
+	&.active,
+	&:hover
+		background-color: #000
+		&:after
+			background-image: url(../img/icons/plus-white.svg)
+
+.product-plus-total-wrapper
+	display: flex
+	border: 1px solid #D8DBE1
+	border-top: none
+	align-items: center
+	padding: 31px
+
+.product-plus-total
+	display: flex
+	align-items: flex-end
+	margin-right: auto
+	.price
+		font-size: 32px
+		font-weight: bold
+		line-height: 1
+		margin-right: 14px
+		s
+			display: block
+			font-size: 15px
+			line-height: 1
+	.bonuses
+		margin-bottom: 2px
+
+.product-plus-btns
+	display: flex
+	align-items: center
+	.checkbox-label
+		margin-right: 43px
+
+.product-plus-btns-row
+	display: flex
+	.btn
+		margin-right: 18px
+		min-width: 210px
+		&:last-child
+			margin-right: 0
+
+.prod-slider
+	&:after
+		content: ''
+		position: absolute
+		left: 0
+		top: -1px
+		right: 0
+		bottom: -1px
+		border: 1px solid #D8DBE1
+		z-index: -1
+	.owl-stage
+		display: flex
+	.product-preview
+		margin: 0
+		border-width: 0
+		border-right-width: 1px
+	.owl-item:last-child
+		.product-preview
+			border-right-width: 0
+
+.product-preview--list
+	.product-liked
+		right: 22px
+
+.product-compare
+	position: absolute
+	right: 22px
+	top: 50px
+	width: 16px
+	height: 14px
+	background-image: url(../img/icons/list.svg)
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: center
+	opacity: 0
+	transition: $time
+	cursor: pointer
+	z-index: 2
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 21px
+		height: 15px
+		background-image: url(../img/icons/list-add.svg)
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		opacity: 0
+	&.added
+		background-size: 0
+		&:after
+			opacity: 1
+
+.product-footer-descr
+	font-size: 12px
+	color: #838E9E
+	p
+		line-height: 2.5
+		img
+			margin-left: 10px
+	p:last-of-type
+		margin-bottom: 0
+
+.tab-mob-title
+	font-size: 14px
+	position: relative
+	padding: 14px 0 13px
+	cursor: pointer
+	display: none
+	span
+		font-size: 11px
+	&:after
+		content: ''
+		width: 11px
+		height: 7px
+		position: absolute
+		right: 0
+		top: 22px
+		background-image: url(../img/icons/arrow-down.svg)
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		transition: $time
+	&.active
+		&:after
+			transform: rotate(180deg)
+
+.compare-modal
+	position: fixed
+	top: -150%
+	left: 0
+	width: 100%
+	z-index: 10
+	background-color: #FAE670
+	box-shadow: inset hoff voff blur color
+	box-shadow: 0px 11px 16px 0px rgba(0,0,0,0.16)
+	padding: 8px 0
+	transition: top .5s ease-in-out
+	&.visible
+		top: 0
+
+.compare-modal-row
+	display: flex
+	align-items: center
+
+.compare-modal-item
+	margin-right: auto
+
+.compare-modal-item-link
+	display: inline-flex
+	align-items: center
+	color: #000 !important
+	text-decoration: none !important
+
+.compare-modal-item-img
+	width: 53px
+	height: 53px
+	background-color: #fff
+	flex: 0 0 53px
+	margin-right: 15px
+	img
+		width: 100%
+		height: 100%
+		object-fit: contain
+
+.compare-modal-item-title
+	line-height: 1.2
+	h3
+		display: block
+		margin: 0
+		font-weight: bold
+		font-size: 15px
+	span
+		font-size: 12px
+		opacity: .46
+
+.compare-modal-btn
+	margin-right: 22px
+	.btn
+		height: 35px
+		line-height: 35px
+		padding: 0 29px
+		border-radius: 4px
+
+.compare-modal-close
+	display: inline-flex
+	cursor: pointer
+	img
+		width: 10px
+
+.popup-content
+	padding: 57px 60px
+	height: 100%
+
+.replace-product-popup
+	.popup-block
+		max-width: 948px
+	.popup-content
+		padding-bottom: 0
+
+.popup-title
+	margin-bottom: 43px
+	padding-right: 25px
+	h3
+		font-size: 23px
+		margin-bottom: 24px
+		font-weight: bold
+	p
+		font-size: 14px
+		margin-bottom: 0
+
+.replace-product-block
+	h3
+		font-size: 15px
+		margin-bottom: 24px
+		font-weight: bold
+	.row
+		margin: 0 -10px -20px
+		[class*=col-]
+			padding: 0 10px 20px
+	.product-preview
+		margin: 0
+		border: none
+		background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: gray; stroke-width: 1; stroke-dasharray: 9 9'/></svg>")
+		background-size: 100% 100%
+		background-position: center
+		background-repeat: no-repeat
+		padding: 14px 27px 24px
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			border: 1px solid $gray
+			opacity: 0
+			transition: $time
+			z-index: -1
+		&.active
+			background: none
+			&:after
+				opacity: 1
+
+	.product-preview-subtitle
+		font-size: 10px
+		margin-bottom: 7px
+	.product-preview-title
+		font-size: 16px
+	.product-preview-articul
+		font-size: 10px
+		margin-bottom: 8px
+
+.replace-product-btn
+	position: absolute
+	right: 23px
+	bottom: 17px
+	width: 40px
+	height: 40px
+	background-color: #D8DBE1
+	border-radius: 50%
+	z-index: 2
+	overflow: hidden
+	&.active:after
+		opacity: 1
+	&:after
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background-color: #1EE1AF
+		background-image: url(../img/icons/check.svg)
+		background-size: 14px
+		background-repeat: no-repeat
+		background-position: center
+		transition: $time
+		opacity: 0
+
+.replace-product-block-btn
+	padding: 0 60px 57px
+
+.compare-wrapper
+	overflow-x: auto
+	overflow-y: visible
+	&::-webkit-scrollbar
+		width: 3px
+		height: 6px
+	&::-webkit-scrollbar-track
+		background-color: #f1f1f1
+	&::-webkit-scrollbar-thumb
+		background-color: #000
+
+.compare-remove
+	margin-bottom: 50px
+	a
+		display: flex
+		align-items: center
+		color: #000 !important
+		text-decoration: underline
+		font-size: 14px
+		img
+			width: 13px
+			margin-right: 12px
+
+.compare-items-list
+	display: flex
+	margin-bottom: 65px
+
+.compare-item
+	width: 100%
+	flex: 0 0 20%
+	max-width: 20%
+	padding-right: 38px
+
+.compare-item-img
+	height: 99px
+	margin-bottom: 20px
+	img
+		max-width: 130px
+		width: 100%
+		max-height: 100%
+		object-fit: contain
+		object-position: left center
+
+.compare-title
+	font-size: 16px
+	line-height: 1.2
+	margin-bottom: 30px
+	a
+		color: #000!important
+		text-decoration: none !important
+
+.compare-reviews
+	padding-left: 1px
+	.product-rating
+		margin-bottom: 15px
+
+.compare-price
+	.price
+		font-weight: bold
+		font-size: 19px
+		s
+			font-size: 15px
+			font-weight: normal
+
+.compare-number
+	font-size: 10px
+	text-align: center
+	color: #909397
+	display: none
+
+.compare-chracteristics-row
+	display: flex
+	&:hover
+		.compare-chracteristics-col
+			background-color: #F8F8F8
+
+.compare-chracteristics-col
+	width: 100%
+	flex: 0 0 20%
+	max-width: 20%
+	border-bottom: 1px solid #DBDDE3
+	padding: 20px 38px 20px 0
+	font-size: 14px
+	transition: $time
+	&:nth-child(5n-4)
+		.compare-char-title
+			opacity: 1
+
+.compare-char-title
+	font-size: 10px
+	color: #909397
+	text-transform: uppercase
+	margin-bottom: 10px
+	line-height: 1.2
+	opacity: 0
+
+.compare-char
+	.mute
+		opacity: .33
+	img
+		width: 13px
+
+.compare-colors
+	display: flex
+	padding-top: 4px
+
+.compare-color
+	margin-right: 3px
+	width: 11px
+	flex: 0 0 11px
+	height: 11px
+	border-radius: 50%
+	&.white
+		border: 1px solid #000
+
+.compare-chracteristics-price
+	display: none
+	.compare-char
+		font-weight: bold
+
+.basket-head
+	display: flex
+	border-bottom: 1px solid #D8DBE1
+	padding-bottom: 19px
+
+.basket-head-item
+	font-size: 15px
+	width: 100%
+	&.img
+		flex: 0 0 16%
+		max-width: 16%
+	&.name
+		flex: 0 0 37%
+		max-width: 37%
+	&.price
+		flex: 0 0 16%
+		max-width: 16%
+	&.quantity
+		flex: 0 0 16%
+		max-width: 16%
+	&.total
+		flex: 0 0 15%
+		max-width: 15%
+
+.basket-items-wrapper
+	border-bottom: 1px solid $gray
+.basket-item
+	padding: 31px 0 34px
+	&:nth-child(even)
+		background-color: #F5F5F5
+
+.basket-item-row
+	display: flex
+	> div
+		width: 100%
+
+.basket-item-img
+	flex: 0 0 16%
+	max-width: 16%
+	padding-right: 41px
+	padding-left: 35px
+	img
+		width: 100%
+
+.basket-item-name
+	flex: 0 0 37%
+	max-width: 37%
+	padding-right: 20px
+	.in-stock
+		margin-left: 0
+
+.basket-item-brand
+	font-size: 10px
+	color: #8291A5
+	margin-bottom: 7px
+	a
+		color: inherit !important
+		text-decoration: none !important
+
+.basket-item-title
+	font-size: 16px
+	line-height: 1.25
+	margin-bottom: 3px
+	a
+		color: #000 !important
+		text-decoration: none !important
+
+.basket-item-descr
+	margin-top: 21px
+	margin-bottom: 13px
+	ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+		font-size: 14px
+		li
+			display: flex
+			margin-bottom: 3px
+			&:last-child
+				margin-bottom: 0
+			span
+				width: 127px
+				color: #909397
+				margin-right: 23px
+
+.basket-item-price
+	flex: 0 0 16%
+	max-width: 16%
+	padding-top: 15px
+	font-size: 19px
+
+.basket-item-qnt
+	flex: 0 0 16%
+	max-width: 16%
+	padding-top: 18px
+
+.select-quantity
+	display: flex
+	height: 26px
+	width: 100px
+	button
+		flex: 0 0 26px
+		max-width: 26px
+		width: 100%
+		position: relative
+		background-color: transparent
+		border: none
+		appearance: none
+		cursor: pointer
+		outline: none !important
+		&:before
+			content: ''
+			position: absolute
+			left: 50%
+			margin-left: -6px
+			top: 50%
+			margin-top: -1px
+			width: 12px
+			height: 2px
+			background-color: #000
+	input
+		width: 100%
+		flex: 0 0 47px
+		max-width: 47px
+		appearance: none
+		border: none
+		background-color: transparent
+		text-align: center
+		font-size: 19px
+	.plus
+		&:after
+			content: ''
+			position: absolute
+			height: 12px
+			width: 2px
+			left: 50%
+			margin-left: -1px
+			top: 50%
+			margin-top: -6px
+			background-color: #000
+
+.basket-item-total-price
+	flex: 0 0 12%
+	max-width: 12%
+	padding-top: 15px
+	font-size: 19px
+	font-weight: bold
+
+.basket-item-delete
+	padding-top: 24px
+	display: flex
+	a
+		display: inline-flex
+		transition: $time
+		color: #000 !important
+		text-decoration: underline
+		font-size: 0
+		width: 12px
+		height: 12px
+		background-image: url(../img/icons/close.svg)
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		&:hover
+			opacity: .6
+	img
+		width: 12px
+
+.basket-select-gift
+	display: none
+
+.basket-gift-title
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 14px
+	h3
+		margin: 0
+		font-size: 15px
+		font-weight: bold
+
+.close-basket-gift
+	font-size: 14px
+	color: #000 !important
+	text-decoration: underline
+	text-decoration-style: dashed
+
+.basket-gift-slider
+	opacity: 1 !important
+	background-color: #fff
+	.owl-nav
+		margin-bottom: 17px
+		right: 80px
+	.replace-product-btn
+		opacity: 0
+		transition: $time
+		right: 11px
+		bottom: 9px
+		&.active
+			opacity: 1
+	.product-preview:hover
+		.replace-product-btn
+			opacity: 1
+
+.basket-checkout-wrapper
+	display: flex
+	justify-content: flex-end
+	padding-top: 52px
+
+.basket-checkout
+	max-width: 495px
+	width: 100%
+
+.basket-checkout-info
+	display: flex
+	margin-bottom: 6px
+
+.basket-checkout-title
+	font-size: 15px
+	width: 100%
+	max-width: 220px
+	padding-right: 20px
+	span
+		font-size: 12px
+
+.basket-checkout-content
+	font-size: 14px
+	&.mute
+		color: #ADADAD
+	a
+		color: #000 !important
+		text-decoration: underline
+		text-decoration-style: dashed
+
+.basket-checkout-total
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	.price
+		font-size: 19px
+		font-weight: bold
+		margin-right: 10px		
+
+.basket-checkout-submit
+	margin-top: 33px
+	.btn
+		width: 100%
+		margin-bottom: 15px
+
+.promocode-form
+	position: relative
+	margin-top: 15px
+	margin-bottom: 15px
+	display: none
+	&.open
+		display: flex
+	input
+		flex: 1
+		border: 1px solid #000
+		outline: none !important
+		padding: 0 15px
+		font-size: 12px
+	.btn
+		height: 35px
+		line-height: 35px
+		padding: 0 20px
+		font-size: 12px
+		width: auto !important
+
+.checkout-title
+	margin-bottom: 23px
+	h2
+		margin: 0
+		font-size: 15px
+
+.checkout-step
+	border: 1px solid $gray
+	padding: 21px 38px 53px 55px
+	margin-bottom: 27px
+
+.checkout-step-title
+	padding-bottom: 13px
+	h3
+		font-size: 15px
+		font-weight: normal
+		position: relative
+		margin-bottom: 9px
+		span
+			position: absolute
+			display: inline-block
+			width: 26px
+			height: 26px
+			border-radius: 50%
+			line-height: 26px
+			text-align: center
+			color: #fff
+			background-color: #000
+			font-size: 14px
+			left: -39px
+			top: -4px
+	p
+		margin-bottom: 9px
+		font-size: 13px
+		opacity: .76
+
+.checkout-step-body
+	> div:last-child
+		margin-bottom: 0
+	.checkbox-label
+		margin-bottom: 17px
+	.row
+		margin-bottom: 14px
+		padding-top: 1px
+
+.del-other-time
+	display: none
+	&.active
+		display: flex
+
+.del-other-time-date
+	margin-right: 35px
+	input.del-date
+		width: 294px
+
+.del-other-time-select
+	display: flex
+	align-items: center
+	span
+		margin-right: 17px
+		font-size: 13px
+	input.input-style
+		width: 60px
+		text-align: center
+		padding: 0
+
+.cahs-pay-item
+	margin-bottom: 15px
+
+.cash-qnt-block
+	display: flex
+	align-items: center
+	margin-top: 15px
+	input.input-style
+		max-width: 294px
+		margin-right: 11px
+	p
+		margin: 0
+		font-size: 13px
+
+.form-label
+	margin: 0
+	display: block
+	width: 100%
+	position: relative
+	.input-style
+		margin-left: -1px
+		margin-top: -1px
+		width: calc(100% + 1px)
+		background-color: transparent
+		padding-top: 14px
+		&.focused
+			border-color: #000
+	span
+		position: absolute
+		left: 18px
+		top: 19px
+		font-size: 14px
+		color: #ACB5C2
+		cursor: text
+		transition: $time
+		span
+			position: static
+			color: #C61428
+
+.input-style
+	border: 1px solid $gray
+	height: 60px
+	padding: 0 18px
+	outline: none !important
+	transition: $time
+	width: 100%
+	position: relative
+	font-size: 14px
+	&:focus,
+	&.focused
+		z-index: 1
+		& + span
+			top: 7px
+			font-size: 11px
+	&:focus
+		border-color: #000
+
+.checkout-delivery-way
+	margin-top: 40px
+	> h3
+		font-size: 18px
+		margin-bottom: 32px
+
+.delivery-way-tabs-nav
+	.tabs-link
+		font-size: 14px
+		padding-right: 15px
+		padding-left: 15px
+		&:first-child
+			padding-left: 0
+
+.delivery-way-tabs
+	padding-top: 26px
+	.tab-item
+		padding: 0
+
+.delivery-checkbox-row
+	display: flex
+	flex-wrap: wrap
+	padding-bottom: 14px
+
+.delivery-checkbox-item
+	padding-right: 75px
+	display: flex
+	margin-bottom: 30px
+	max-width: 280px
+	width: 100%
+	&:last-child
+		padding-right: 0
+	.checkbox-label
+		margin-top: 2px
+
+.delivery-company-brand
+	height: 24px
+	display: flex
+	align-items: center
+	margin-bottom: 8px
+	img
+		max-width: 154px
+		max-height: 24px
+		width: auto
+		height: auto
+		object-fit: contain
+
+.delivery-checkbox-info
+	p
+		margin-bottom: 5px
+		font-size: 12px
+		color: #9199A5
+		span
+			font-weight: bold
+
+.open-del-info
+	font-size: 12px
+	color: #000 !important
+	text-decoration: underline
+
+.del-company-info
+	padding-top: 20px
+	display: none
+
+.checkout-total
+	border: 1px solid $gray
+	margin-top: -20px
+	position: relative
+	padding: 27px 30px
+	.checkout-total-title
+		margin-bottom: 13px
+		h4
+			position: relative
+			display: inline-block
+			margin: 0
+			&:after
+				content: ''
+				position: absolute
+				right: -18px
+				top: 0
+				width: 7px
+				height: 7px
+				border-radius: 50%
+				background-color: $green
+	.product-preview
+		margin-left: 0
+	.basket-dropdown-items:after
+		left: -30px
+		right: -30px
+	.basket-checkout
+		padding-top: 27px
+		border-bottom: 1px solid $gray
+		padding-bottom: 24px
+		max-width: none
+	.basket-checkout-title
+		flex: 1
+		max-width: none
+	.basket-checkout-content
+		min-width: 73px
+	.basket-dropdown-total-price
+		margin-bottom: 0
+
+.checkout-total-mob
+	display: none
+	position: fixed
+	bottom: 0
+	left: 0
+	width: 100%
+	height: 56px
+	background-color: #fff
+	z-index: 9
+	border-top: 1px solid #E7EBF2
+	padding: 0 16px
+
+.checkout-total-mob-row
+	display: flex
+	justify-content: space-between
+	padding-left: 34px
+	padding-right: 20px
+	padding-top: 7px
+	line-height: 1.33
+	h4
+		position: relative
+		font-size: 12px
+		margin: 0
+		img
+			position: absolute
+			width: 9px
+			left: -16px
+			top: 2px
+
+.checkout-total-mob-content
+	font-weight: bold
+	s
+		font-size: 8px
+		display: block
+		font-weight: normal
+
+.checkout-complete
+	display: flex
+	margin-top: 40px
+
+.attention-block
+	flex: 1
+	margin-left: 35px
+	display: flex
+	align-items: center
+	font-size: 13px
+	line-height: 1.25
+	img
+		flex: 0 0 35px
+		width: 35px
+		margin-right: 14px
+
+.checkout-footer
+	font-size: 13px
+	line-height: 1.25
+	p
+		margin: 0
+	a
+		color: #000 !important
+		text-decoration: underline
+
+.pay-method-tabs
+	padding-bottom: 30px
+
+.account-profile
+	margin-bottom: 70px
+	padding-top: 32px
+
+.account-nav-wrapper
+	overflow-x: auto
+	overflow-y: visible
+	margin-bottom: 38px
+	&::-webkit-scrollbar
+		width: 0
+		height: 0
+		opacity: 0
+
+.account-nav
+	display: flex
+	font-size: 17px
+	border-bottom: 2px solid $gray
+
+.account-nav-link
+	position: relative
+	color: #000 !important
+	text-decoration: none !important
+	padding: 0 17px 8px
+	white-space: nowrap
+	&:after
+		content: ''
+		position: absolute
+		bottom: -2px
+		left: 0
+		width: 100%
+		height: 2px
+		background-color: $gray
+	&.active
+		font-weight: bold
+		&:after
+			background-color: #000
+
+.profile-data
+	display: flex
+	margin-bottom: 30px
+	font-size: 14px
+	align-items: center
+
+.profile-data-title
+	flex: 0 0 340px
+	width: 100%
+	max-width: 340px
+	color: #909397
+
+.profile-data-content
+	.input-style
+		width: 251px
+
+.date-mask
+	background-image: url(../img/icons/calendar.svg)
+	background-size: 14px
+	background-position: top 50% right 21px
+	background-repeat: no-repeat
+
+.profile-checkboxes
+	.checkbox-label
+		margin-right: 46px
+		&:last-child
+			margin-right: 0
+
+.account-del-address-wrapper
+	h4
+		margin-bottom: 27px
+
+.acc-del-slider
+	.owl-stage
+		display: flex
+	.owl-item:last-child .acc-del-address
+		border-right-width: 0
+	&:after
+		content: ''
+		position: absolute
+		left: 0
+		top: -1px
+		right: 0
+		bottom: -1px
+		border: 1px solid $gray
+		z-index: -1
+
+.acc-del-address
+	border-right: 1px solid $gray
+	padding: 21px 35px 15px 40px
+	height: 100%
+	font-size: 14px
+	line-height: 1.4
+
+.acc-del-address-city
+	position: relative
+	margin-bottom: 8px
+	&:after
+		content: ''
+		position: absolute
+		width: 9px
+		left: -17px
+		height: 8px
+		top: 7px
+		background-image: url(../img/icons/location.svg)
+		background-repeat: no-repeat
+		background-position: center
+		background-size: contain
+
+.acc-del-address-street
+	margin-bottom: 44px
+
+.acc-del-address-phone
+	font-size: 13px
+	margin-bottom: 45px
+	span
+		display: block
+		font-size: 14px
+		margin-top: 7px
+
+.acc-del-address-btns
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+.acc-del-address-redact
+	width: 34px
+	height: 34px
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	background-color: #F5F5F5
+	transition: $time
+	border-radius: 50%
+	&:hover
+		background-color: #e1e1e1
+	img
+		width: 16px!important
+
+.acc-del-address-remove
+	font-size: 14px
+	color: #000 !important
+	text-decoration: underline
+
+.acc-del-address-add
+	text-align: center
+	margin-bottom: 35px
+	a
+		font-size: 14px
+		color: #000 !important
+		text-decoration: underline
+
+.acc-del-address-load
+	img
+		width: 100%
+		height: 100%
+
+.address-form-submit
+	margin-top: 20px
+	.btn
+		min-width: 33.3333%
+
+.profile-delete
+	margin-top: 69px
+
+.profile-photo-wrapper
+	width: 157px
+	margin: 0 auto
+	text-align: center
+	padding-top: 32px
+
+.profile-photo
+	width: 157px
+	height: 157px
+	border-radius: 50%
+	overflow: hidden
+	margin-bottom: 20px
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.profile-photo-download
+	font-size: 15px
+	label
+		display: block
+		width: 100%
+		margin: 0
+		position: relative
+		input
+			position: absolute
+			opacity: 0
+			z-index: -1
+			visibility: hidden
+		span
+			cursor: pointer
+			text-decoration: underline
+
+.photo-info
+	color: #ACB5C2
+	font-size: 12px
+	margin-top: 9px
+
+.confirm-content
+	padding-top: 86px
+	padding-bottom: 81px
+	.popup-title
+		max-width: 368px
+		margin-bottom: 30px
+		h3
+			font-size: 23px
+			line-height: 1.1
+			margin-bottom: 18px
+		p
+			font-size: 14px
+
+.confirm-btns
+	display: flex
+	.btn
+		width: 178px
+		margin-right: 32px
+		&:last-child
+			margin-right: 0
+
+.order-form
+	margin-bottom: 43px
+	.row
+		margin: 0 -11px
+		[class*=col-]
+			padding: 0 11px
+	.input-style
+		height: 48px
+
+.order-form-submit
+	margin-top: 22px
+	.btn
+		width: 100%
+
+.order-list
+	min-width: 866px
+
+.orders-head
+	display: flex
+	font-size: 14px
+	margin-bottom: 14px
+
+.orders-head-item
+	padding-right: 14px
+	width: 100%
+	&.name
+		flex: 0 0 55%
+		max-width: 55%
+	&.status
+		flex: 0 0 17%
+		max-width: 17%
+	&.action
+		flex: 0 0 28%
+		max-width: 28%
+		padding-left: 30px
+
+.order-item
+	border: 1px solid $gray
+	margin-bottom: 30px
+
+.order-top-left
+	padding: 24px 21px
+	font-size: 13px
+	background-color: #EFF0F2
+	height: 85px
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		li
+			line-height: 1.2
+			margin-bottom: 7px
+			&:last-child
+				margin-bottom: 0
+			span
+				color: #90959E
+				margin-right: 7px
+
+.order-top-right
+	padding: 24px 28px
+	display: flex
+	align-items: flex-end
+	justify-content: space-between
+	font-size: 13px
+	background-color: #EFF0F2
+	height: 85px
+
+.order-price
+	color: #90959E
+	line-height: 1.1
+	span
+		display: block
+		font-size: 19px
+		color: #000
+		font-weight: normal
+		margin-top: 5px
+
+.order-product-total
+	span
+		font-weight: bold
+
+.order-delete
+	margin-bottom: 3px
+	a
+		color: #000 !important
+		text-decoration: underline
+		display: inline-flex
+		align-items: center
+		font-size: 0
+	img
+		width: 13px
+
+.order-body
+	display: flex
+
+.order-products
+	width: 100%
+	flex: 0 0 72%
+	max-width: 72%
+	border-right: 1px solid $gray
+
+.order-sidebar
+	width: 100%
+	flex: 0 0 28%
+	max-width: 28%
+
+.order-product
+	display: flex
+	padding: 19px 14px 25px
+	border-bottom: 1px solid $gray
+	font-size: 14px
+	position: relative
+	&:last-child
+		border-bottom: none
+	.basket-item-descr
+		margin-top: 0
+		ul
+			font-size: 12px
+
+.order-product-img
+	margin-right: 13px
+	img
+		width: 68px
+
+.order-product-name
+	width: 100%
+	flex: 0 0 calc(51% - 71px)
+	max-width: calc(51% - 71px)
+
+.order-product-title
+	margin-bottom: 13px
+	a
+		color: #000 !important
+		text-decoration: none !important
+
+.order-product-price
+	padding-left: 7px
+	width: 100%
+	flex: 0 0 14%
+	max-width: 14%
+
+.order-product-qnt
+	width: 100%
+	flex: 0 0 11%
+	max-width: 11%
+
+.order-product-status
+	width: 100%
+	flex: 0 0 24%
+	max-width: 24%
+
+.order-btns
+	padding: 32px 28px 22px
+	.btn
+		width: 100%
+		margin-bottom: 10px
+		height: 46px
+		line-height: 46px
+		padding: 0 10px
+	.btn-border
+		line-height: 44px
+
+.bonuses-account
+	display: flex
+	flex-wrap: wrap
+	font-size: 14px
+	margin-bottom: 53px
+
+.bonuses-have
+	margin-right: 144px
+	.bonuses-qnt
+		position: relative
+		font-size: 23px
+		padding-left: 35px
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			top: -1px
+			width: 26px
+			height: 26px
+			background-image: url(../img/icons/star-circle.svg)
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: center
+
+.bonuses-qnt
+	font-size: 19px
+	line-height: 1.1
+	margin-bottom: 7px
+
+.bonuses-can-use
+	padding-top: 5px
+
+.bonuses-use
+	margin-left: auto
+
+.bonuses-content
+	font-size: 14px
+	margin-bottom: 31px
+	max-width: 468px
+	p
+		&:last-of-type
+			margin-bottom: 0
+
+.promocode-link-wrapper
+	margin-bottom: 30px
+	h5
+		font-size: 12px
+		margin-bottom: 6px
+
+.promocode-link
+	line-height: 1
+	font-size: 17px
+	margin-bottom: 14px
+	border: none
+	outline: none !important
+	width: 100%
+	background-color: transparent
+
+.copy-promocode-link
+	font-size: 12px
+	text-decoration: underline
+	cursor: pointer
+
+.bonus-card-wrapper
+	margin-left: 44px
+	max-width: 330px
+	font-size: 14px
+	h3
+		font-size: 26px
+		margin-bottom: 13px
+	p
+		margin-bottom: 25px
+	a
+		color: #000 !important
+		text-decoration: underline
+
+.bonus-card
+	width: 323px
+	height: 190px
+	border: 1px solid #000
+	border-radius: 13px
+	padding: 30px 30px 21px
+	display: flex
+	flex-direction: column
+	margin-bottom: 27px
+	white-space: nowrap
+
+.bonus-card-logo
+	flex: 1
+	img
+		width: 157px
+
+.bonus-card-number
+	font-size: 20px
+	letter-spacing: .215em
+	margin-bottom: 13px
+	line-height: 1.1
+	margin-bottom: 27px
+
+.bonus-card-name
+	font-size: 14px
+
+.contacts-info
+	font-size: 14px
+	margin-bottom: 51px
+	p:last-of-type
+		margin-bottom: 0
+
+.contacts-row
+	display: flex
+	font-size: 14px
+
+.contacts-company
+	margin-right: 105px
+	margin-bottom: 20px
+	h3
+		font-size: 18px
+		margin-bottom: 15px
+	p
+		margin-bottom: 4px
+	iframe
+		width: 100%
+		height: 300px
+		border: none
+		margin-top: 27px
+		display: none
+
+.contact-address
+	margin-bottom: 19px
+
+.contacts-li
+	margin-bottom: 4px
+	a
+		color: #000 !important
+		text-decoration: none
+	&.mail
+		a
+			text-decoration: underline
+
+.contacts-time
+	margin-top: 23px
+	color: #878787
+	font-size: 10px
+	line-height: 2
+	p
+		margin: 0
+
+.route-map
+	margin-top: 30px
+	display: none
+
+.post-header
+	margin-bottom: 50px
+	p
+		font-size: 24px
+		margin-bottom: 45px
+	img
+		width: 100%
+
+.post-content
+	width: 75%
+	position: relative
+	blockquote
+		line-height: 1.4
+		font-size: 22px
+		margin-bottom: 2rem
+	p
+		margin-bottom: 2rem
+		line-height: 2
+	h2
+		font-size: 36px
+		font-weight: bold
+		margin-top: 5rem
+		margin-bottom: 1rem
+	img
+		width: 100%
+		display: block
+		margin-bottom: 2rem
+.post-content-helper
+	position: absolute
+	left: 100%
+	margin-left: 111px
+	font-size: 18px
+	width: 256px
+	top: 25%
+
+.blog-sort
+	display: flex
+	margin-bottom: 34px
+	align-items: center
+
+.blog-tabs
+	display: flex
+	flex-wrap: wrap
+
+.blog-tab-link
+	margin-right: 44px
+	font-size: 14px
+	color: #A0A6B2
+	transition: $time
+	text-decoration: underline
+	&:last-child
+		margin-right: 0
+	&:hover,
+	&.active
+		color: #000
+		text-decoration: none
+
+.blog-sort
+	.sorting-select
+		margin-left: auto
+		margin-right: 0
+		margin-bottom: 0
+
+.blog-poster
+	margin-bottom: 48px
+	.post-info
+		position: relative
+		h2
+			font-size: 20px
+			font-weight: bold
+			line-height: 1.35
+	.poster-img
+		height: 486px
+
+.post-right-text
+	position: absolute
+	left: 100%
+	bottom: 100%
+	margin-bottom: 5px
+	margin-left: 3px
+	white-space: nowrap
+	font-size: 9px
+	text-transform: uppercase
+	a
+		color: #000 !important
+		text-decoration: none !important
+		transform-origin: left top
+		transform: rotate(-90deg)
+
+.expensive-product-content
+	display: flex
+
+.expensive-product-main
+	width: 100%
+	flex: 0 0 48%
+	max-width: 48%
+	.page-title
+		max-width: none
+
+.exp-prod-descr
+	margin-bottom: 75px
+	p
+		max-width: 50%
+		&:last-of-type
+			margin-bottom: 0
+
+.exp-prod-price
+	font-size: 14px
+	color: #969696
+	line-height: 1.4
+	margin-bottom: 10px
+	span
+		color: #000
+		display: block
+		font-size: 50px
+
+.exp-buy-btn
+	.btn
+		padding: 0 81px
+
+.expensive-product-img
+	width: 100%
+	flex: 0 0 52%
+	max-width: 52%
+	padding-right: 80px
+	img
+		width: calc(100% + 113px)
+		margin-left: -113px
+		margin-top: -70px
+
+.exp-prod-info
+	.main-about-row
+		padding-top: 0
+		margin-top: -30px
+
+.s-check-sound
+	padding-top: 100px
+	padding-bottom: 100px
+	.section-title
+		text-align: center
+		h2
+			font-size: 52px
+			margin-bottom: 5px
+
+.check-sound-img
+	position: relative
+	img
+		position: absolute
+		width: 100vw
+		top: -20px
+		right: calc(900px - 50vw)
+		z-index: -1
+
+.check-sound
+	text-align: center
+
+.check-sound-btn
+	display: inline-flex
+	flex-direction: column
+	font-size: 12px
+	text-decoration: none !important
+	color: #000 !important
+	.icon
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		width: 153px
+		flex: 0 0 153px
+		min-width: 153px
+		height: 153px
+		border-radius: 50%
+		background-color: #1EE1AF
+		margin-bottom: 17px
+		img
+			width: 44px
+
+.exp-full-info
+	padding-top: 150px
+
+.exp-full-info-main
+	font-size: 39px
+	line-height: 1.23
+	width: 65%
+	margin-bottom: 78px
+	p:last-of-type
+		margin-bottom: 0
+
+.exp-full-info-features
+	display: flex
+	margin-bottom: 75px
+
+.features-left
+	flex: 1
+	padding-right: 285px
+	font-size: 12px
+	h4
+		font-size: 18px
+	p:last-of-type
+		margin-bottom: 0
+
+.features-right
+	font-size: 12px
+	padding-right: 120px
+	h2
+		font-size: 70px
+		line-height: 1.25
+		margin: 0
+
+.exp-img-wrapper
+	padding-bottom: 43px
+	.row
+		margin: 0 -16px
+		[class*=col-]
+			padding: 0 16px
+
+.exp-img
+	margin-bottom: 23px
+	position: relative
+	img
+		width: 100%
+
+.exp-img-descr
+	position: absolute
+	z-index: 1
+	&.opened
+		.exp-img-descr-open
+			opacity: 0
+		.exp-img-descr-content
+			transform: scale(1)
+			opacity: 1
+
+.exp-img-descr-open
+	width: 42px
+	height: 42px
+	position: relative
+	border-radius: 50%
+	background-color: #1EE1AF
+	background-image: url(../img/icons/plus-2.svg)
+	background-size: 13px
+	background-position: center
+	background-repeat: no-repeat
+	cursor: pointer
+	transition: $time
+	opacity: 1
+
+.exp-img-descr-content
+	position: absolute
+	width: 456px
+	height: 456px
+	top: 50%
+	left: 50%
+	margin-top: -228px
+	margin-left: -228px
+	z-index: 1
+	border-radius: 50%
+	background-color: #fff
+	display: flex
+	align-items: center
+	flex-direction: column
+	text-align: center
+	justify-content: center
+	font-size: 12px
+	padding: 0 47px
+	overflow: hidden
+	transition: $time
+	opacity: 0
+	transform: scale(0)
+	h3
+		font-size: 30px
+		margin-bottom: 23px
+
+.exp-img-descr-close
+	text-decoration: underline
+	text-decoration-style: dashed
+	position: absolute
+	bottom: 23px
+	left: 50%
+	transform: translateX(-50%)
+	color: #000 !important
+
+.exp-info-in-numbers
+	display: flex
+	margin-bottom: 50px
+	.exp-info-in-nmb
+		width: 100%
+		flex: 0 0 33.33333%
+		max-width: 33.33333%
+		&:nth-child(2)
+			align-items: center
+		&:nth-child(3)
+			align-items: flex-end
+
+.exp-info-in-nmb
+	display: flex
+	flex-direction: column
+	padding-bottom: 45px
+	span
+		display: block
+		font-size: 178px
+		line-height: 1.2
+
+.exp-info-video
+	.video-block
+		height: 666px
+	.product-preview-title
+		font-size: 30px
+		width: 55%
+		h3
+			font-size: inherit
+
+.s-product-create
+	background-color: #000
+	color: #fff
+	padding-top: 66px
+	padding-bottom: 0
+	overflow: hidden
+	h2
+		font-size: 39px
+		max-width: 888px
+		margin-bottom: 25px
+	p
+		color: rgba(#fff, .69)
+		max-width: 575px
+		font-size: 12px
+		margin-bottom: 2rem
+
+.product-create-row
+	display: flex
+	align-items: flex-end
+
+.product-create-left
+	padding-right: 20px
+
+.product-create-right
+	margin-left: auto
+	.exp-info-in-nmb
+		max-width: 300px
+		padding-bottom: 0
+		margin-bottom: 30px
+		p
+			color: #fff
+			max-width: auto
+
+.product-create-slider
+	margin-top: 65px
+	margin-bottom: 116px
+	&:hover
+		.owl-nav
+			opacity: 1
+	.owl-stage-outer
+		overflow: visible
+	.owl-item
+		transition: $time
+		opacity: .44
+		&:last-child
+			opacity: 1 !important
+		&.active
+			opacity: 1
+			&.last
+				opacity: .44
+	img
+		height: 100%
+		width: 526px !important
+		object-fit: cover
+	.owl-nav
+		margin-bottom: 0
+		top: 50%
+		width: 100%
+		transition: $time
+		opacity: 0
+		button
+			background-color: #fff !important
+			width: 61px
+			height: 61px
+			border-radius: 50%
+			display: inline-flex
+			padding: 0
+			align-items: center
+			justify-content: center
+			position: absolute
+			top: 50%
+			margin-top: -30px
+			margin-right: 0
+			margin-left: 0
+			transition: $time
+			&.disabled
+				opacity: 0
+			&.owl-prev
+				left: 0
+			&.owl-next
+				right: 0
+
+.s-expensive-buy
+	padding-top: 105px
+	padding-bottom: 85px
+
+.expensive-buy-row
+	display: flex
+	padding-bottom: 110px
+
+.expensive-buy-img
+	width: 100%
+	flex: 0 0 65%
+	max-width: 65%
+	padding-right: 110px
+	img
+		width: 100%
+
+.expensive-buy-char
+	padding-top: 20px
+	width: 100%
+	flex: 0 0 35%
+	max-width: 35%
+	h2
+		font-size: 30px
+		margin-bottom: 35px
+	p
+		font-size: 19px
+		margin-bottom: 0
+	.product-short-desctiption
+		padding-bottom: 80px
+	.short-desctiption-list
+		li
+			font-size: 16px
+			margin-bottom: 10px
+			span
+				flex: 0 0 260px
+	.product-btns
+		display: flex
+		justify-content: space-between
+		padding-right: 0
+		.btn
+			flex: calc(50% - 8px)
+			max-width: calc(50% - 8px)
+			width: 100%
+			margin: 0
+	.product-delivery
+		padding-bottom: 30px
+
+.expensive-buy-comment
+	max-width: 78%
+	margin-left: auto
+	text-align: center
+	font-size: 29px
+	line-height: 1.35
+	p
+		margin-bottom: 80px
+
+.expensive-buy-name
+	font-size: 15px
+	h4
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 20px
+		margin-bottom: 8px
+
+@import "media" // Always at the end

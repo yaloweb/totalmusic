@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="237.896" height="162.964" viewBox="0 0 237.896 162.964">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" x2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="1" stop-color="#d8dbe1"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_1806" data-name="Group 1806" transform="translate(-1135 -1179.036)">
+    <g id="Group_1679" data-name="Group 1679" transform="translate(-423 -1093)">
+      <rect id="Rectangle_380" data-name="Rectangle 380" width="50" height="4" transform="translate(1558 2362)" fill="url(#linear-gradient)"/>
+      <path id="Path_1154" data-name="Path 1154" d="M0,0H237.9V9H0Z" transform="translate(1558 2381)" fill="url(#linear-gradient)"/>
+      <path id="Path_1155" data-name="Path 1155" d="M0,0H201V9H0Z" transform="translate(1558 2401)" fill="url(#linear-gradient)"/>
+      <rect id="Rectangle_381" data-name="Rectangle 381" width="88" height="6" transform="translate(1558 2429)" fill="url(#linear-gradient)"/>
+    </g>
+    <path id="Без_названия" data-name="Без названия" d="M0,19.532,72,.59,39.135,62.477l-6-32.515Z" transform="translate(1211 1178.446)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
+  <g id="Group_1710" data-name="Group 1710" transform="translate(-513.5 -1525.5)">
+    <circle id="Ellipse_95" data-name="Ellipse 95" cx="16" cy="16" r="16" transform="translate(514 1526)" fill="none" stroke="#000" stroke-width="1"/>
+    <g id="Group_1706" data-name="Group 1706" transform="translate(586.54 2021.844) rotate(180)">
+      <path id="Path_826" data-name="Path 826" d="M53.578,485.606h5.905a1.053,1.053,0,0,0,.892-1.614l-2.957-4.707a1.055,1.055,0,0,0-1.786,0l-2.947,4.707A1.053,1.053,0,0,0,53.578,485.606Z" transform="translate(0 0)"/>
+      <line id="Line_34" data-name="Line 34" y2="4.858" transform="translate(56.532 483.987)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+    <text id="_.EXE" data-name=".EXE" transform="translate(529 1551)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="7" font-family="SegoeUI, Segoe UI"><tspan x="-6.364" y="0">.EXE</tspan></text>
+  </g>
+</svg>

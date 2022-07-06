@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23.573" height="16.913" viewBox="0 0 23.573 16.913">
+  <g id="Group_1788" data-name="Group 1788" transform="translate(-1338 -390)">
+    <g id="Group_1786" data-name="Group 1786" transform="translate(-265 359)">
+      <g id="Group_1784" data-name="Group 1784" transform="translate(-5)">
+        <g id="Group_1783" data-name="Group 1783" transform="translate(1614 32)">
+          <line id="Line_177" data-name="Line 177" x2="10.975" fill="none" stroke="#000" stroke-linecap="square" stroke-width="2"/>
+          <line id="Line_178" data-name="Line 178" x2="10.975" transform="translate(0 7)" fill="none" stroke="#000" stroke-linecap="square" stroke-width="2"/>
+          <path id="Path_1197" data-name="Path 1197" d="M0,0H4" transform="translate(0 14)" fill="none" stroke="#000" stroke-linecap="square" stroke-width="2"/>
+        </g>
+      </g>
+      <g id="Group_1785" data-name="Group 1785" transform="translate(-10)">
+        <g id="Group_1783-2" data-name="Group 1783" transform="translate(1614 32)">
+          <line id="Line_177-2" data-name="Line 177" x2="0.975" fill="none" stroke="#000" stroke-linecap="square" stroke-width="2"/>
+          <line id="Line_178-2" data-name="Line 178" x2="0.975" transform="translate(0 7)" fill="none" stroke="#000" stroke-linecap="square" stroke-width="2"/>
+          <path id="Path_1197-2" data-name="Path 1197" d="M0,0H1" transform="translate(0 14)" fill="none" stroke="#000" stroke-linecap="square" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+    <path id="Path_1200" data-name="Path 1200" d="M5335.859,12974.03l3.119,3.183,5.881-6" transform="translate(-3984 -12571)" fill="none" stroke="#000" stroke-linejoin="bevel" stroke-width="2"/>
+  </g>
+</svg>
